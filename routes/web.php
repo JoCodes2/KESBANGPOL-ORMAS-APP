@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('Layouts.master');
 });
 
+Route::get('/alur-lapor-ormas', function () {
+    return view('admin.ReportOrmas');
+});
+
 //* route api *//
 // route  api flow report //
 Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(function () {
