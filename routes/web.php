@@ -22,7 +22,9 @@ Route::get('/', function () {
 Route::get('/alur-lapor-ormas', function () {
     return view('admin.ReportOrmas');
 });
-
+Route::get('/produk-hukum', function () {
+    return view('admin.ProdukHukum');
+});
 //* route api *//
 // route  api flow report //
 Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(function () {
