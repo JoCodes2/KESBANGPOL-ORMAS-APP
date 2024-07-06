@@ -39,7 +39,7 @@
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="file_alur_lapor">File Alut lapor Keberadaan Ormas</label>
+                                <label for="file_alur_lapor">File Alur lapor Keberadaan Ormas</label>
                                 <input type="file" class="form-control" name="file_alur_lapor" id="file_alur_lapor" >
                                 <small id="file_alur_lapor-error" class="text-danger"></small>
                             </div>

@@ -27,6 +27,31 @@
                 <p>Alur Lapor Keberadaan Ormas</p>
             </a>
         </li>
+        <li class="nav-item menu-is-opening menu-open">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                    Formulis Keberadaan Ormas
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview" style="display: block;">
+                <li class="nav-item">
+                    <a href="{{ url('/ormas') }}" class="nav-link {{ request()->is('ormas*') ? 'active-custom' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Data Ormas</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('/document-ormas') }}" class="nav-link {{ request()->is('document-ormas*') ? 'active-custom' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Dokumen Persyaratan</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

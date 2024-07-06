@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_ormas');
             $table->string('singkatan_ormas');
             $table->enum('bidang_ormas', [
-                'sosial kemanusiaan', 'agama', 'pendidikan', 'ekonomi', 'budaya',
+                'sosial kemanusiaan', 'sosial kemasyarakatan', 'agama', 'pendidikan', 'ekonomi', 'budaya',
                 'hukum dan politik', 'aliran keagamaan', 'nasional', 'lingkungan', 'perdagangan', 'hukum', 'kesehatan', 'seni', 'demokrasi dan kebangsaan',
                 'olaharaga', 'sosial keagamaan'
             ]);
