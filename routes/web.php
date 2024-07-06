@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CMS\FlowReportController;
 use App\Http\Controllers\CMS\OrmasController;
+use App\Http\Controllers\CMS\ProdukHukumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,9 @@ Route::get('/document-ormas', function () {
     return view('admin.DocumentOrmas');
 });
 
+Route::get('/produk-hukum', function () {
+    return view('admin.ProdukHukum');
+});
 //* route api *//
 // route  api flow report //
 Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(function () {
@@ -38,12 +42,16 @@ Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(
     Route::post('/update/{id}', 'updateDataById');
     Route::delete('/delete/{id}', 'deleteData');
 });
+
 // Route api ormas //
 Route::prefix('v1/ormas')->controller(OrmasController::class)->group(function () {
+
+Route::prefix('v1/produk-hukum')->controller(ProdukHukumController::class)->group(function () {
     Route::get('/', 'getAllData');
     Route::post('/create', 'createData');
     Route::get('/get/{id}', 'getDataById');
     Route::post('/update/{id}', 'updateDataById');
     Route::delete('/delete/{id}', 'deleteData');
 });
+
 // * end route api *//
