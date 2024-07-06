@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CMS\DocumentOrmasController;
 use App\Http\Controllers\CMS\FlowReportController;
+use App\Http\Controllers\CMS\UserController;
 use App\Http\Controllers\CMS\OrmasController;
 use App\Http\Controllers\CMS\ProdukHukumController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,9 @@ Route::get('/document-ormas', function () {
 Route::get('/produk-hukum', function () {
     return view('admin.ProdukHukum');
 });
+Route::get('/user', function () {
+    return view('admin.User');
+});
 //* route api *//
 // route  api flow report //
 Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(function () {
@@ -54,6 +58,7 @@ Route::prefix('v1/ormas')->controller(OrmasController::class)->group(function ()
     Route::delete('/delete/{id}', 'deleteData');
 });
 
+// route produk hukum //
 Route::prefix('v1/produk-hukum')->controller(ProdukHukumController::class)->group(function () {
     Route::get('/', 'getAllData');
     Route::post('/create', 'createData');
@@ -61,9 +66,16 @@ Route::prefix('v1/produk-hukum')->controller(ProdukHukumController::class)->grou
     Route::post('/update/{id}', 'updateDataById');
     Route::delete('/delete/{id}', 'deleteData');
 });
-
 Route::prefix('v1/document-ormas')->controller(DocumentOrmasController::class)->group(function () {
     Route::get('/', 'getAllData');
+    Route::delete('/delete/{id}', 'deleteData');
+});
+// route  api user //
+Route::prefix('v1/user')->controller(UserController::class)->group(function () {
+    Route::get('/', 'getAllData');
+    Route::post('/create', 'createData');
+    Route::get('/get/{id}', 'getDataById');
+    Route::post('/update/{id}', 'updateDataById');
     Route::delete('/delete/{id}', 'deleteData');
 });
 

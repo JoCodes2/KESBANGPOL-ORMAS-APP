@@ -21,45 +21,52 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-            <li class="nav-item">
-                <a href="{{ url('/produk-hukum') }}"
-                    class="nav-link {{ request()->is('produk-hukum*') ? 'active-custom' : '' }}">
-                    <i class="nav-icon fa-solid fa-book"></i>
-                    <p>Produk Hukum</p>
-                </a>
-            </li>
-
-
-            <li class="nav-item">
-                <a href="{{ url('/alur-lapor-ormas') }}"
-                    class="nav-link {{ request()->is('alur-lapor-ormas*') ? 'active-custom' : '' }}">
-                    <i class="nav-icon fa-solid fa-pen"></i>
-                    <p>Alur Lapor Keberadaan Ormas</p>
-                </a>
-            </li>
-            <li class="nav-item menu-is-opening menu-open">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-chart-pie"></i>
-                    <p>
-                        Formulis Keberadaan Ormas
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview" style="display: block;">
-                    <li class="nav-item">
-                        <a href="{{ url('/ormas') }}" class="nav-link {{ request()->is('ormas*') ? 'active-custom' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Data Ormas</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url('/document-ormas') }}" class="nav-link {{ request()->is('document-ormas*') ? 'active-custom' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Dokumen Persyaratan</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+                <li class="nav-item">
+                    <a href="{{ url('/produk-hukum') }}"
+                        class="nav-link {{ request()->is('produk-hukum*') ? 'active-custom' : '' }}">
+                        <i class="nav-icon fa-solid fa-book"></i>
+                        <p>Produk Hukum</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('/alur-lapor-ormas') }}"
+                        class="nav-link {{ request()->is('alur-lapor-ormas*') ? 'active-custom' : '' }}">
+                        <i class="nav-icon fa-solid fa-pen"></i>
+                        <p>Alur Lapor Keberadaan Ormas</p>
+                    </a>
+                </li>
+                <li class="nav-item menu-is-opening menu-open">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Formulis Keberadaan Ormas
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <li class="nav-item">
+                            <a href="{{ url('/ormas') }}"
+                                class="nav-link {{ request()->is('ormas*') ? 'active-custom' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Ormas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/document-ormas') }}"
+                                class="nav-link {{ request()->is('document-ormas*') ? 'active-custom' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Dokumen Persyaratan</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('/user') }}" class="nav-link {{ request()->is('user*') ? 'active-custom' : '' }}">
+                        <i class="nav-icon fa-solid fa-user"></i>
+                        <p>Pengguna</p>
+                    </a>
+                </li>
+            </ul>
         </nav>
         <!-- /.sidebar-menu -->
     </div>
