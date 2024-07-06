@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('file_biodata_pengurus');
             $table->string('file_pas_foto');
             $table->string('file_ktp_pengurus');
-            $table->string('file_surat_keterangan_domisisi');
+            $table->string('file_surat_keterangan_domisili');
             $table->timestamps();
         });
     }
