@@ -37,6 +37,14 @@
                         <p>Alur Lapor Keberadaan Ormas</p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ url('/user') }}"
+                        class="nav-link {{ request()->is('user*') ? 'active-custom' : '' }}">
+                        <i class="nav-icon fa-solid fa-user"></i>
+                        <p>Pengguna</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
