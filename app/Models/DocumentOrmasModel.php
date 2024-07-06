@@ -24,7 +24,7 @@ class DocumentOrmasModel extends Model
         'file_biodata_pengurus',
         'file_pas_foto',
         'file_ktp_pengurus',
-        'file_surat_keterangan_domisisi',
+        'file_surat_keterangan_domisili',
         'created_at',
         'updated_at',
     ];
