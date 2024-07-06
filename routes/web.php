@@ -45,6 +45,12 @@ Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(
 
 // Route api ormas //
 Route::prefix('v1/ormas')->controller(OrmasController::class)->group(function () {
+    Route::get('/', 'getAllData');
+    Route::post('/create', 'createData');
+    Route::get('/get/{id}', 'getDataById');
+    Route::post('/update/{id}', 'updateDataById');
+    Route::delete('/delete/{id}', 'deleteData');
+});
 
 Route::prefix('v1/produk-hukum')->controller(ProdukHukumController::class)->group(function () {
     Route::get('/', 'getAllData');
