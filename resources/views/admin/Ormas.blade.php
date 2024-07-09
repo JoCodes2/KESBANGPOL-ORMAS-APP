@@ -290,12 +290,12 @@
 <script>
     $(document).ready(function(){
 
-    $('#no_hp_ketua, #no_hp_sekretaris, #no_hp_bendahara').on('input', function() {
-        var input = $(this).val();
-        if (!/^[0-9]*$/.test(input)) {
-            $(this).val(input.slice(0, -1));
-        }
-    });
+        $('#no_hp_ketua, #no_hp_sekretaris, #no_hp_bendahara').on('input', function() {
+            var input = $(this).val();
+            if (!/^[0-9]*$/.test(input)) {
+                $(this).val(input.slice(0, -1));
+            }
+        });
 
         function mapBidangOrmas(value) {
             const bidangMapping = {
@@ -361,10 +361,12 @@
 
                     $("#loadData").DataTable({
                         "responsive": true,
-                        "lengthChange": false,
+                        "lengthChange": true,
                         "lengthMenu": [10, 20, 30, 40, 50],
                         "autoWidth": false,
                     });
+
+
                 },
                 error: function() {
                     console.log("Gagal mengambil data dari server");

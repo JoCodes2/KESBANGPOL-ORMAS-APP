@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\CMS\DocumentOrmasController;
 use App\Http\Controllers\CMS\FlowReportController;
 use App\Http\Controllers\CMS\UserController;
 use App\Http\Controllers\CMS\OrmasController;
 use App\Http\Controllers\CMS\ProdukHukumController;
 use Illuminate\Support\Facades\Route;
+use League\CommonMark\Node\Block\Document;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +66,10 @@ Route::prefix('v1/produk-hukum')->controller(ProdukHukumController::class)->grou
     Route::post('/update/{id}', 'updateDataById');
     Route::delete('/delete/{id}', 'deleteData');
 });
-
+Route::prefix('v1/document-ormas')->controller(DocumentOrmasController::class)->group(function () {
+    Route::get('/', 'getAllData');
+    Route::delete('/delete/{id}', 'deleteData');
+});
 // route  api user //
 Route::prefix('v1/user')->controller(UserController::class)->group(function () {
     Route::get('/', 'getAllData');
