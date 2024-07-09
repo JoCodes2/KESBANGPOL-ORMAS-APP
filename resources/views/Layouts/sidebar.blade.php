@@ -66,6 +66,12 @@
                         <p>Pengguna</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ url('/register-ormas') }}" class="nav-link {{ request()->is('register-ormas*') ? 'active-custom' : '' }}">
+                        <i class="fa-solid fa-cash-register"></i>
+                        <p>Pendaftaran Ormas</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
