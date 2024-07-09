@@ -39,6 +39,10 @@ Route::get('/produk-hukum', function () {
 Route::get('/user', function () {
     return view('admin.User');
 });
+
+Route::get('/register-ormas', function () {
+    return view('admin.RegisterOrmas');
+});
 //* route api *//
 // route  api flow report //
 Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(function () {
