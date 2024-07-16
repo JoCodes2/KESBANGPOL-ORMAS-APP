@@ -66,6 +66,12 @@
                         <p>Pengguna</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ url('/search-ormas') }}" class="nav-link {{ request()->is('search-ormas*') ? 'active-custom' : '' }}">
+                        <i class="nav-icon fa-solid fa-search"></i>
+                        <p>Search</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

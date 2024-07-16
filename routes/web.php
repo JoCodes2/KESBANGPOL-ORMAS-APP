@@ -39,6 +39,16 @@ Route::get('/produk-hukum', function () {
 Route::get('/user', function () {
     return view('admin.User');
 });
+Route::get('/search-ormas', function () {
+    return view('admin.search');
+});
+
+// search
+// Route::get('/search-ormas', [OrmasController::class, 'search']);
+
+// Route::get('/search-ormas', [OrmasController::class, 'search']);
+
+
 //* route api *//
 // route  api flow report //
 Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(function () {
@@ -56,6 +66,9 @@ Route::prefix('v1/ormas')->controller(OrmasController::class)->group(function ()
     Route::get('/get/{id}', 'getDataById');
     Route::post('/update/{id}', 'updateDataById');
     Route::delete('/delete/{id}', 'deleteData');
+    Route::get('/search-ormas', 'search'); // Pastikan menggunakan 'search'
+    Route::get('/get-by-name', 'getByName'); // Tambahkan rute ini
+
 });
 
 // route produk hukum //

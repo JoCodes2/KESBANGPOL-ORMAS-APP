@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\OrmasRequest;
 use App\Repositories\OrmasRepositories;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class OrmasController extends Controller
 {
@@ -33,5 +34,40 @@ class OrmasController extends Controller
     public function deleteData($id)
     {
         return $this->ormasRepo->deleteData($id);
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->get('keyword');
+        $results = $this->ormasRepo->searchByNameOrAbbreviation($keyword);
+
+        if ($results->isEmpty()) {
+            return response()->json([
+                'message' => 'Data tidak ditemukan',
+            ], 404);
+        }
+
+        return response()->json([
+            'message' => 'Data ditemukan',
+            'data' => $results,
+        ], 200);
+    }
+
+    public function getByName(Request $request)
+    {
+        $namaOrmas = $request->get('nama_ormas');
+        $ormas = $this->ormasRepo->findByName($namaOrmas);
+
+        if ($ormas) {
+            return response()->json([
+                'success' => true,
+                'data' => $ormas,
+            ], 200);
+        }
+
+        return response()->json([
+            'success' => false,
+            'message' => 'Data tidak ditemukan',
+        ], 404);
     }
 }
