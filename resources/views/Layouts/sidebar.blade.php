@@ -67,9 +67,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a href="{{ url('/search-ormas') }}" class="nav-link {{ request()->is('search-ormas*') ? 'active-custom' : '' }}">
                         <i class="nav-icon fa-solid fa-search"></i>
                         <p>Search</p>
+=======
+                    <a href="{{ url('/register-ormas') }}" class="nav-link {{ request()->is('register-ormas*') ? 'active-custom' : '' }}">
+                        <i class="fa-solid fa-cash-register"></i>
+                        <p>Pendaftaran Ormas</p>
+>>>>>>> e6a74ddee6724f7944ba441b5741e0fbfe48fdeb
                     </a>
                 </li>
             </ul>
