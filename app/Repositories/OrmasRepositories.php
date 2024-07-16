@@ -10,9 +10,10 @@ use App\Traits\HttpResponseTraits;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-class  OrmasRepositories implements OrmasInterfaces
+class OrmasRepositories implements OrmasInterfaces
 {
     use HttpResponseTraits;
+
     protected $ormasModel;
     protected $documentOrmasModel;
 
@@ -31,6 +32,7 @@ class  OrmasRepositories implements OrmasInterfaces
             return $this->success($data);
         }
     }
+
     private function uploadFile($request, $fieldName, $storageFolder, $prefix = null)
     {
         if ($request->hasFile($fieldName)) {
@@ -58,6 +60,7 @@ class  OrmasRepositories implements OrmasInterfaces
 
         return null;
     }
+
     public function createData(OrmasRequest $request)
     {
         try {
@@ -90,7 +93,7 @@ class  OrmasRepositories implements OrmasInterfaces
             $documetOrmas->file_biodata_pengurus = $this->uploadFile($request, 'file_biodata_pengurus', 'biodata-pengurus', 'Biodata-Ormas');
             $documetOrmas->file_pas_foto = $this->uploadFile($request, 'file_pas_foto', 'pas-foto', 'Pas-Foto');
             $documetOrmas->file_ktp_pengurus = $this->uploadFile($request, 'file_ktp_pengurus', 'ktp-pengurus', 'Foto-KTP');
-            $documetOrmas->file_surat_keterangan_domisili = $this->uploadFile($request, 'file_surat_keterangan_domisili', 'surat-keterangan-domisili', 'SUrat Domisili');
+            $documetOrmas->file_surat_keterangan_domisili = $this->uploadFile($request, 'file_surat_keterangan_domisili', 'surat-keterangan-domisili', 'Surat Domisili');
 
             $documetOrmas->save();
 
@@ -109,6 +112,7 @@ class  OrmasRepositories implements OrmasInterfaces
             return $this->idOrDataNotFound();
         }
     }
+
     public function updateDataById(OrmasRequest $request, $id)
     {
         try {
@@ -137,6 +141,7 @@ class  OrmasRepositories implements OrmasInterfaces
             return $this->error($th->getMessage(), 400, $th, class_basename($this), __FUNCTION__);
         }
     }
+
     public function deleteData($id)
     {
         try {
@@ -173,9 +178,23 @@ class  OrmasRepositories implements OrmasInterfaces
 
             $ormas->delete();
 
-            return $this->delete();
+            return $this->success(null, 'Data berhasil dihapus');
         } catch (\Throwable $th) {
             return $this->error($th->getMessage(), 400, $th, class_basename($this), __FUNCTION__);
         }
+    }
+
+    public function searchByNameOrAbbreviation($keyword)
+    {
+        $results = $this->ormasModel::where('nama_ormas', 'like', '%' . $keyword . '%')
+            ->orWhere('singkatan_ormas', 'like', '%' . $keyword . '%')
+            ->get();
+
+        return $results;
+    }
+    
+    public function findByName($namaOrmas)
+    {
+        return $this->ormasModel::where('nama_ormas', $namaOrmas)->first();
     }
 }
