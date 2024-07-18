@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="card">
+ <div class="card">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h3 class="m-0 font-weight-bold "><i class="fa-solid fa-book pr-2"></i>Data Ormas</h3>
         <button type="button" class="btn btn-outline-primary ml-auto" id="exportData">
@@ -283,6 +283,7 @@
             </div>
         </div>
     </div>
+ </div>
 
 
 @endsection
