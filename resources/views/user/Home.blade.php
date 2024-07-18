@@ -55,7 +55,7 @@
                             <img src="{{ asset('custom/asset/networking_1239719.png') }}"  alt="...">
                         </div>
                         <div class="card-body d-flex justify-content-center">
-                            <h5 class="card-title fw-bold"><a href="/" class="text-dark">DATABASE ORMAS</a></h5>
+                            <h5 class="card-title fw-bold"><a href="/database" class="text-dark">DATABASE ORMAS</a></h5>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 </div>
             </div>
     </main>
-   <footer class="mt-5  pt-5 container">
+   <footer class="fixed-bottom container">
         <div class="col-md-8 mx-auto text-center desc">
             <p class="fw-bold">copyright © 2023 Kesbangpol</p>
             <p class="fw-bold">BADAN KESATUAN BANGSA DAN POLITIK <br> PROVINSI SULAWESI TENGAH</p>
