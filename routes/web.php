@@ -30,6 +30,16 @@ Route::get('/database', function () {
 Route::get('/produkhukum', function () {
     return view('user.ProdukHukumUi');
 });
+
+Route::get('/alur-lapor', function () {
+    return view('user.AlurLapor');
+});
+Route::get('/search', function () {
+    return view('user.AlurLapor');
+});
+Route::get('/register', function () {
+    return view('user.AlurLapor');
+});
 // end ui
 
 Route::get('/dashboard', function () {
