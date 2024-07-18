@@ -108,7 +108,7 @@
                             "lengthMenu": [10, 20, 30, 40, 50],
                             "autoWidth": false,
                             "language": {
-                                "lengthMenu": "Tampilkan _MENU_ data per halaman",
+                                "lengthMenu": "_MENU_",
                                 "zeroRecords": "Tidak ada data yang ditemukan",
                                 "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
                                 "infoEmpty": "Tidak ada data tersedia",

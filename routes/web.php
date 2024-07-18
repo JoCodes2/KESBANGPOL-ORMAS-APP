@@ -25,6 +25,11 @@ Route::get('/', function () {
 Route::get('/database', function () {
     return view('user.DatabaseOrmas');
 });
+
+// produkhukumui
+Route::get('/produkhukum', function () {
+    return view('user.ProdukHukumUi');
+});
 // end ui
 
 Route::get('/dashboard', function () {

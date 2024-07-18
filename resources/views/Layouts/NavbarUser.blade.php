@@ -14,7 +14,7 @@
             <a class="nav-link"  href="/">BERANDA</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">PRODUK HUKUM</a>
+            <a class="nav-link" href="/produkhukum">PRODUK HUKUM</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/">DATABASE ORMAS</a>
