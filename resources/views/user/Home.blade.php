@@ -45,7 +45,7 @@
                             <img src="{{ asset('custom/asset/treaty_4960697.png') }}" alt="...">
                         </div>
                         <div class="card-body d-flex justify-content-center">
-                            <h5 class="card-title fw-bold"><a href="/" class="text-dark">PRODUK HUKUM</a></h5>
+                            <h5 class="card-title fw-bold"><a href="/produkhukum" class="text-dark">PRODUK HUKUM</a></h5>
                         </div>
                     </div>
                 </div>
