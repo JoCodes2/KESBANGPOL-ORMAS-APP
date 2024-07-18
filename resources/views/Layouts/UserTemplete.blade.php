@@ -36,11 +36,11 @@
 <body class="d-flex flex-column">
     @include('Layouts.NavbarUser')
     <!-- content -->
-    <main class="content container flex-grow-1 d-flex flex-column pt-5 mt-5">
+    <div class="container d-flex flex-column pt-5 mt-5">
         @yield('content')
-    </main>
+    </div>
     <!-- footer -->
-    <div class="mt-auto footer-content">
+    <div class="mt-auto footer-content fixed-bottom ">
         <div class="col-md-12 justify-content-center text-center font-kanit">
             <p>&copy; 2023 Kesbanpol</p>
         </div>

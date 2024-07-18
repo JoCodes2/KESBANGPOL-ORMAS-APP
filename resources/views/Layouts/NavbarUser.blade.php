@@ -1,6 +1,6 @@
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg font-popins fixed-top navbar-custom">
-    <div class="container col-md-10">
+  <nav class="navbar navbar-expand-lg font-popins fixed-top navbar-custom ">
+    <div class="container">
       <a class="navbar-brand " href="#">
         <img src="{{ asset('custom/asset/Group 2.png') }}" alt="Logo" class="img-fluid">
       </a>
