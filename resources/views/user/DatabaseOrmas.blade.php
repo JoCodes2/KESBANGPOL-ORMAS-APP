@@ -1,11 +1,10 @@
 @extends('Layouts.UserTemplete')
 @section('content')
  <div class="">
-    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
-        <h3 class="m-0 font-weight-bold "><i class="fa-solid fa-book pr-2"></i>Database Ormas</h3>
+    <div class="py-4 d-flex flex-row align-items-center justify-content-center">
+        <h3 class="m-0 font-weight-bold">Database Ormas</h3>
     </div>
-    <!-- /.card-header -->
-    <div class="">
+    <div id="table-container" class="tabel-data-ormas" style="display: none;">
         <table id="loadData" class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -18,17 +17,19 @@
                     <th>NPWP</th>
                     <th>Masa Berlaku Kepengurusan</th>
                     <th>Tahun Berdiri</th>
-                    <th>No Telepon Ormas</th>
                 </tr>
             </thead>
-
             <tbody id="tbody">
 
             </tbody>
         </table>
     </div>
+    <div id="no-data-message" class="d-flex align-items-center justify-content-center" style="height: 60vh; display: none;">
+        <h3 class="font-weight-bold text-center">Belum Ada Data Ormas!!!</h3>
+    </div>
  </div>
 @endsection
+
 @section('scripts')
 <script>
     $(document).ready(function(){
@@ -72,36 +73,55 @@
                 dataType: "json",
                 success: function(response) {
                     console.log(response);
-                    let tableBody = "";
-                    $.each(response.data, function(index, item) {
-                        tableBody += "<tr>";
-                        tableBody += "<td>" + (index + 1) + "</td>";
-                        tableBody += "<td class ='text-center'><strong class ='fw-bold fs-10'>" + item.singkatan_ormas + "</strong><br>" + item.nama_ormas + "</td>";
-                        tableBody += "<td>" + mapBidangOrmas(item.bidang_ormas) + "</td>";
-                        tableBody += "<td>" + mapHukumOrmas(item.legalitas_ormas) + "</td>";
-                        tableBody += "<td>" + item.alamat_kesekretariatan + "</td>";
-                        tableBody += "<td class ='text-center'><strong class ='fw-bold fs-10'>" + item.nama_ketua  + "</strong><br>" + item.no_hp_ketua + "</td>";
-                        tableBody += "<td class ='text-center'><strong class ='fw-bold fs-10'>" + item.nama_sekretaris  + "</strong><br>" + item.no_hp_sekretaris + "</td>";
-                        tableBody += "<td class ='text-center'><strong class ='fw-bold fs-10'>" + item.nama_bendahara  + "</strong><br>" + item.no_hp_bendahara + "</td>";
 
-                        tableBody += "<td>";
-                            tableBody += "<button type='button' class='btn btn-outline-success detail-ormas' data-id='" + item.id + "'><i class='fa-solid fa-eye'></i></button>";
-                            tableBody += "<button type='button' class='btn btn-outline-primary edit-ormas' data-id='" + item.id + "'><i class='fa-solid fa-pen-to-square'></i></button>";
-                            tableBody += "<button type='button' class='btn btn-outline-danger delete-confirm' data-id='" + item.id + "'><i class='fa fa-trash'></i></button>";
-                        tableBody += "</td>";
-                        tableBody += "</tr>";
-                    });
+                    if (response.code === 404) {
+                        $("#no-data-message").show();
+                        $(".tabel-data-ormas").hide();
+                    } else  if(response.code === 200) {
+                        $("#no-data-message").hide();
+                        $(".tabel-data-ormas").show();
+                        let tableBody = "";
+                        $.each(response.data, function(index, item) {
+                            tableBody += "<tr>";
+                            tableBody += "<td>" + (index + 1) + "</td>";
+                            tableBody += "<td>" + mapBidangOrmas(item.bidang_ormas) + "</td>";
+                            tableBody += "<td class='text-center'><strong class='fw-bold fs-10'>" + item.singkatan_ormas + "</strong><br>" + item.nama_ormas + "</td>";
+                            tableBody += "<td>" + mapHukumOrmas(item.legalitas_ormas) + "</td>";
+                            tableBody += "<td>";
+                            tableBody += "<ul>";
+                            tableBody += "<li>" + item.nama_ketua + " (Ketua)</li>";
+                            tableBody += "<li>" + item.nama_bendahara + " (Bendahara)</li>";
+                            tableBody += "<li>" + item.nama_sekretaris + " (Sekretaris)</li>";
+                            tableBody += "</ul>";
+                            tableBody += "</td>";
+                            tableBody += "<td>" + item.alamat_kesekretariatan + "</td>";
+                            tableBody += "<td>" + item.npwp + "</td>";
+                            tableBody += "<td>" + item.masa_berlaku_ormas + "</td>";
+                            tableBody += "<td>" + item.tanggal_berdiri + "</td>";
+                            tableBody += "</tr>";
+                        });
+                        $("#loadData tbody").html(tableBody);
 
-                    $("#loadData tbody").html(tableBody);
-
-                    $("#loadData").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "lengthMenu": [10, 20, 30, 40, 50],
-                        "autoWidth": false,
-                    });
-
-
+                        $("#loadData").DataTable({
+                            "responsive": true,
+                            "lengthChange": true,
+                            "lengthMenu": [10, 20, 30, 40, 50],
+                            "autoWidth": false,
+                            "language": {
+                                "lengthMenu": "Tampilkan _MENU_ data per halaman",
+                                "zeroRecords": "Tidak ada data yang ditemukan",
+                                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                                "infoEmpty": "Tidak ada data tersedia",
+                                "infoFiltered": "(difilter dari _MAX_ total data)",
+                                "paginate": {
+                                    "first": "Pertama",
+                                    "last": "Terakhir",
+                                    "next": "Selanjutnya",
+                                    "previous": "Sebelumnya"
+                                }
+                            }
+                        });
+                    }
                 },
                 error: function() {
                     console.log("Gagal mengambil data dari server");
@@ -116,7 +136,6 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
-    })
+    });
 </script>
 @endsection

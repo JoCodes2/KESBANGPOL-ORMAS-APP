@@ -36,7 +36,7 @@
 <body class="d-flex flex-column">
     @include('Layouts.NavbarUser')
     <!-- content -->
-    <div class="container d-flex flex-column pt-5 mt-5">
+    <div class="container d-flex flex-column py-5 my-5">
         @yield('content')
     </div>
     <!-- footer -->
