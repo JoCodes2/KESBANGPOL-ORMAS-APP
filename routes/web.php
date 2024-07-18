@@ -18,10 +18,14 @@ use League\CommonMark\Node\Block\Document;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// ui
 Route::get('/', function () {
-    return view('Layouts.master');
+    return view('user.Home');
 });
+Route::get('/database', function () {
+    return view('user.DatabaseOrmas');
+});
+// end ui
 
 Route::get('/alur-lapor-ormas', function () {
     return view('admin.ReportOrmas');
