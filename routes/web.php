@@ -25,6 +25,15 @@ Route::get('/', function () {
 Route::get('/database', function () {
     return view('user.DatabaseOrmas');
 });
+Route::get('/alur-lapor', function () {
+    return view('user.AlurLapor');
+});
+Route::get('/search', function () {
+    return view('user.AlurLapor');
+});
+Route::get('/register', function () {
+    return view('user.AlurLapor');
+});
 // end ui
 
 Route::get('/dashboard', function () {

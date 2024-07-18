@@ -57,3 +57,18 @@
     border-bottom: 2px solid #ffffff; /* Garis bawah saat aktif */
     text-decoration: none; /* Menghilangkan garis bawah default */
 }
+.border-bottom-right {
+    border-bottom: 1px solid #b2b2b2;
+    border-right: 1px solid #b2b2b2;
+}
+
+.border-top-active {
+    border-top: 1px solid #b2b2b2;
+    border-left: 1px solid #b2b2b2;
+    border-right: 1px solid #b2b2b2;
+}
+
+.border-bottom-left {
+    border-bottom: 1px solid #b2b2b2;
+    border-left: 1px solid #b2b2b2;
+}

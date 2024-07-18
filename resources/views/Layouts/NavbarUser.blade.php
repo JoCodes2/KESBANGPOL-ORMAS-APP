@@ -19,8 +19,8 @@
           <li class="nav-item ">
             <a href="{{ url('/database') }}" class="nav-link {{ request()->is('database*') ? 'active-user' : '' }}">DATABASE ORMAS</a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/">LAYANAN ORMAS</a>
+           <li class="nav-item ">
+            <a href="{{ url('/alur-lapor') }}" class="nav-link {{ request()->is('alur-lapor*') || request()->is('register*') || request()->is('search*')  ? 'active-user' : '' }}">LAYANAN ORMAS</a>
           </li>
         </ul>
       </div>
