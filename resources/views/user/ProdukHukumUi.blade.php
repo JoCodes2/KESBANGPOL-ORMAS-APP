@@ -12,7 +12,7 @@
                     <tr>
                         <th>No</th>
                         <th>Judul</th>
-                        <th>Aksi</th>
+                        <th>Option</th>
                     </tr>
                 </thead>
                 <tbody id="tbody">

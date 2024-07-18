@@ -14,7 +14,7 @@
             <a class="nav-link"  href="/">BERANDA</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/produkhukum">PRODUK HUKUM</a>
+            <a href="{{ url('/produkhukum') }}" class="nav-link {{ request()->is('produkhukum*') ? 'active-user' : '' }}">PRODUK HUKUM</a>
           </li>
           <li class="nav-item ">
             <a href="{{ url('/database') }}" class="nav-link {{ request()->is('database*') ? 'active-user' : '' }}">DATABASE ORMAS</a>
