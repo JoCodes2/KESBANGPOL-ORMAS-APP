@@ -52,5 +52,8 @@
 .navbar-nav .nav-link:hover::before {
     width: 100%;
 }
-
-
+.active-user {
+    color: #ffffff; /* Warna teks saat aktif */
+    border-bottom: 2px solid #ffffff; /* Garis bawah saat aktif */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+}
