@@ -65,7 +65,7 @@
                             <img src="{{ asset('custom/asset/collaboration_16089714.png') }}"  alt="...">
                         </div>
                         <div class="card-body d-flex justify-content-center">
-                            <h5 class="card-title fw-bold"><a href="/" class="text-dark">LAYANAN ORMAS</a></h5>
+                            <h5 class="card-title fw-bold"><a href="/alur-lapor" class="text-dark">LAYANAN ORMAS</a></h5>
                         </div>
                     </div>
                 </div>
