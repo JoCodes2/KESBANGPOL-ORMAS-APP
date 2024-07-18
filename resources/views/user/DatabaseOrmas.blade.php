@@ -1,10 +1,10 @@
 @extends('Layouts.UserTemplete')
 @section('content')
- <div class="">
+ <div class="py-4">
     <div class="py-4 d-flex flex-row align-items-center justify-content-center">
-        <h3 class="m-0 font-weight-bold">Database Ormas</h3>
+        <h3 class="m-0 font-weight-bold">DATABASE ORMAS</h3>
     </div>
-    <div id="table-container" class="tabel-data-ormas" style="display: none;">
+    <div id="table-container" class="tabel-data-ormas">
         <table id="loadData" class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -23,9 +23,6 @@
 
             </tbody>
         </table>
-    </div>
-    <div id="no-data-message" class="d-flex align-items-center justify-content-center" style="height: 60vh; display: none;">
-        <h3 class="font-weight-bold text-center">Belum Ada Data Ormas!!!</h3>
     </div>
  </div>
 @endsection
@@ -72,56 +69,47 @@
                 method: "GET",
                 dataType: "json",
                 success: function(response) {
-                    console.log(response);
+                    let tableBody = "";
+                    $.each(response.data, function(index, item) {
+                        tableBody += "<tr>";
+                        tableBody += "<td>" + (index + 1) + "</td>";
+                        tableBody += "<td>" + mapBidangOrmas(item.bidang_ormas) + "</td>";
+                        tableBody += "<td class='text-center'><strong class='fw-bold fs-10'>" + item.singkatan_ormas + "</strong><br>" + item.nama_ormas + "</td>";
+                        tableBody += "<td>" + mapHukumOrmas(item.legalitas_ormas) + "</td>";
+                        tableBody += "<td>";
+                        tableBody += "<ul>";
+                        tableBody += "<li>" + item.nama_ketua + " (Ketua)</li>";
+                        tableBody += "<li>" + item.nama_bendahara + " (Bendahara)</li>";
+                        tableBody += "<li>" + item.nama_sekretaris + " (Sekretaris)</li>";
+                        tableBody += "</ul>";
+                        tableBody += "</td>";
+                        tableBody += "<td>" + item.alamat_kesekretariatan + "</td>";
+                        tableBody += "<td>" + item.npwp + "</td>";
+                        tableBody += "<td>" + item.masa_berlaku_ormas + "</td>";
+                        tableBody += "<td>" + item.tanggal_berdiri + "</td>";
+                        tableBody += "</tr>";
+                    });
+                    $("#loadData tbody").html(tableBody);
 
-                    if (response.code === 404) {
-                        $("#no-data-message").show();
-                        $(".tabel-data-ormas").hide();
-                    } else  if(response.code === 200) {
-                        $("#no-data-message").hide();
-                        $(".tabel-data-ormas").show();
-                        let tableBody = "";
-                        $.each(response.data, function(index, item) {
-                            tableBody += "<tr>";
-                            tableBody += "<td>" + (index + 1) + "</td>";
-                            tableBody += "<td>" + mapBidangOrmas(item.bidang_ormas) + "</td>";
-                            tableBody += "<td class='text-center'><strong class='fw-bold fs-10'>" + item.singkatan_ormas + "</strong><br>" + item.nama_ormas + "</td>";
-                            tableBody += "<td>" + mapHukumOrmas(item.legalitas_ormas) + "</td>";
-                            tableBody += "<td>";
-                            tableBody += "<ul>";
-                            tableBody += "<li>" + item.nama_ketua + " (Ketua)</li>";
-                            tableBody += "<li>" + item.nama_bendahara + " (Bendahara)</li>";
-                            tableBody += "<li>" + item.nama_sekretaris + " (Sekretaris)</li>";
-                            tableBody += "</ul>";
-                            tableBody += "</td>";
-                            tableBody += "<td>" + item.alamat_kesekretariatan + "</td>";
-                            tableBody += "<td>" + item.npwp + "</td>";
-                            tableBody += "<td>" + item.masa_berlaku_ormas + "</td>";
-                            tableBody += "<td>" + item.tanggal_berdiri + "</td>";
-                            tableBody += "</tr>";
-                        });
-                        $("#loadData tbody").html(tableBody);
-
-                        $("#loadData").DataTable({
-                            "responsive": true,
-                            "lengthChange": true,
-                            "lengthMenu": [10, 20, 30, 40, 50],
-                            "autoWidth": false,
-                            "language": {
-                                "lengthMenu": "Tampilkan _MENU_ data per halaman",
-                                "zeroRecords": "Tidak ada data yang ditemukan",
-                                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
-                                "infoEmpty": "Tidak ada data tersedia",
-                                "infoFiltered": "(difilter dari _MAX_ total data)",
-                                "paginate": {
-                                    "first": "Pertama",
-                                    "last": "Terakhir",
-                                    "next": "Selanjutnya",
-                                    "previous": "Sebelumnya"
-                                }
+                    $("#loadData").DataTable({
+                        "responsive": true,
+                        "lengthChange": true,
+                        "lengthMenu": [10, 20, 30, 40, 50],
+                        "autoWidth": false,
+                        "language": {
+                            "lengthMenu": "_MENU_",
+                            "zeroRecords": "<i class='fas fa-sad-tear pr-2'></i>Tidak ada data yang ditemukan",
+                            "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                            "infoEmpty": "Tidak ada data tersedia",
+                            "infoFiltered": "(difilter dari _MAX_ total data)",
+                            "paginate": {
+                                "first": "Pertama",
+                                "last": "Terakhir",
+                                "next": "Selanjutnya",
+                                "previous": "Sebelumnya"
                             }
-                        });
-                    }
+                        }
+                    });
                 },
                 error: function() {
                     console.log("Gagal mengambil data dari server");
