@@ -27,6 +27,9 @@ Route::get('/database', function () {
 });
 // end ui
 
+Route::get('/dashboard', function () {
+    return view('admin.Dashboard');
+});
 Route::get('/alur-lapor-ormas', function () {
     return view('admin.ReportOrmas');
 });
