@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&family=Kanit&family=Montserrat:wght@100&family=Poppins:ital,wght@0,100;0,300;0,500;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&family=Kanit&family=Montserrat:wght@100&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;1,300&display=swap");
+
+*body {
+    margin: 0;
+    padding: 0;
+}
+*html {
+    scroll-behavior: smooth;
+}
+
+/* font */
+.font-popins {
+    font-family: "Poppins", sans-serif;
+}
+.font-kanit {
+    font-family: "Kanit", sans-serif;
+}
+/* navbar */
+.navbar {
+    background-color: #102d50;
+    color: white !important;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s;
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%;
+}
+
+
