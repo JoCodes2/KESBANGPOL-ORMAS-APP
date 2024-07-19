@@ -38,7 +38,7 @@ Route::get('/search', function () {
     return view('user.AlurLapor');
 });
 Route::get('/register', function () {
-    return view('user.AlurLapor');
+    return view('user.registerOrmas');
 });
 // end ui
 
