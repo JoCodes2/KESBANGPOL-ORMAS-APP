@@ -9,6 +9,8 @@
     @include('Layouts.style')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="icon" href="{{ asset('custom/asset/Group 168.png') }}" type="image/png" />
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -41,9 +43,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <footer class="main-footer">
-        <img src="" alt="" class="mr-2" style="width: 25px">
-        Powered By Mahasiswa KKLP STMIK Adhi Guna 2023
+    <footer class="main-footer fixed-bottom">
         <div class="float-right d-none d-sm-inline-block">
             <small>Copy Right © By Jocodes</small>
             <b>Version</b> 1.0.0

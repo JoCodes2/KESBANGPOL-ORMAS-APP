@@ -4,8 +4,8 @@
     <div class="py-4 d-flex flex-row align-items-center justify-content-center">
         <h3 class="m-0 font-weight-bold">DATABASE ORMAS</h3>
     </div>
-    <div id="table-container" class="tabel-data-ormas">
-        <table id="loadData" class="table table-bordered table-striped">
+    <div id="table-container" class="tabel-data-ormas  ">
+        <table id="loadData" class="table  table-bordered table-striped">
             <thead>
                 <tr>
                     <th>No</th>

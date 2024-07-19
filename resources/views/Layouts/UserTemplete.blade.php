@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ asset('Image/sps.png') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('custom/asset/Group 168.png') }}" type="image/png" />
     <title>Lapor Ormas</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('Layouts.style')
@@ -32,9 +32,22 @@
             text-align: center; /* Tengahkan teks di dalam footer */
         }
     </style>
+    <style>
+        /* CSS untuk dropdown menu */
+        .navbar-collapse {
+            display: none;
+        }
+
+        .navbar-collapse.show {
+            display: block;
+        }
+        .navbar-toggler-icon i {
+            color: white;
+        }
+        </style>
 
 </head>
-<body class="d-flex flex-column">
+<body class="d-flex flex-column ">
     @include('Layouts.NavbarUser')
     <!-- content -->
     <div class="container d-flex flex-column py-5 my-5">
@@ -43,7 +56,7 @@
     <!-- footer -->
     <div class="mt-auto footer-content fixed-bottom ">
         <div class="col-md-12 justify-content-center text-center font-kanit">
-            <p>&copy; 2023 Kesbanpol</p>
+            <p>&copy; 2024 Kesbangpol</p>
         </div>
     </div>
     @include('Layouts.script')
@@ -62,6 +75,27 @@
                 $('.alur-lapor').addClass('br-bottom');
                 $('.register-ormas').addClass('br-bottom');
             }
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Event handler untuk tombol toggle
+            $('.navbar-toggler').click(function() {
+            var target = $($(this).data('bs-target'));
+            // Toggle kelas 'show' pada menu
+            target.toggleClass('show');
+            // Toggle aria-expanded atribut
+            var isExpanded = $(this).attr('aria-expanded') === 'true';
+            $(this).attr('aria-expanded', !isExpanded);
+            });
+
+            // Menutup menu jika area di luar menu diklik
+            $(document).click(function(event) {
+            if (!$(event.target).closest('.navbar-toggler, .navbar-collapse').length) {
+                $('.navbar-collapse').removeClass('show');
+                $('.navbar-toggler').attr('aria-expanded', 'false');
+            }
+            });
         });
     </script>
 </body>

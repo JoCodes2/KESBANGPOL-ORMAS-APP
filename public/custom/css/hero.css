@@ -5,7 +5,7 @@
 }
 
 .hero-section {
-    padding-top: 330px;
+    padding-top: 300px;
 }
 
 .title-welcome {
@@ -60,17 +60,20 @@
 /* Responsive styles for mobile screens */
 @media (max-width: 768px) {
     .title-welcome {
-        font-size: 36px; /* Adjust the font size for mobile screens */
+        font-size: 34px; /* Adjust the font size for mobile screens */
         line-height: 40px;
+    }
+    .hero-section {
+        padding-top: 200px;
     }
 
     .title-desc {
-        font-size: 24px; /* Adjust the font size for mobile screens */
+        font-size: 22px; /* Adjust the font size for mobile screens */
         line-height: 28px;
     }
 
     .desc p {
-        font-size: 18px; /* Adjust the font size for mobile screens */
+        font-size: 16px; /* Adjust the font size for mobile screens */
         line-height: 22px;
     }
 

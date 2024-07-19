@@ -12,6 +12,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Singkatan/Nama Ormas</th>
                     <th>Surat Permohonan Pendaftaran</th>
                     <th>Akte Pendirian atau Status Orkesmas Yang Disahkan Notaris</th>
                     <th>Anggaran Dasar dan Anggaran Rumah Tangga</th>
@@ -46,6 +47,7 @@
                     $.each(response.data, function(index, item) {
                         tableBody += "<tr>";
                         tableBody += "<td>" + (index + 1) + "</td>";
+                        tableBody += "<td class ='text-center'><strong class ='fw-bold fs-10'>" + item.ormas.singkatan_ormas + "</strong><br>" + item.ormas.nama_ormas + "</td>";
                         tableBody += "<td>" + createDownloadLink(item.file_surat_permohonan, 'surat-permohonan') + "</td>";
                         tableBody += "<td>" + createDownloadLink(item.file_akte_pendirian, 'akte-pendirian') + "</td>";
                         tableBody += "<td>" + createDownloadLink(item.file_ad_art, 'ad-art') + "</td>";

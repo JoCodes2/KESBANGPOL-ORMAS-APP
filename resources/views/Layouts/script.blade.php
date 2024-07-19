@@ -8,8 +8,6 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('dist/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- ChartJS -->
-<script src="{{ asset('dist/plugins/chart.js/Chart.min.js') }}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{ asset('dist/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->

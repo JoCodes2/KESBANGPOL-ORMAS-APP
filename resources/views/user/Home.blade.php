@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ asset('Image/sps.png') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('custom/asset/Group 168.png') }}" type="image/png" />
     <title>Lapor Ormas</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('Layouts.style')
@@ -27,7 +27,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
         <div class="container col-md-8">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="{{ asset('custom/asset/Group 168.png') }}" alt="Logo" class="img-fluid">
             </a>
         </div>
@@ -37,7 +37,7 @@
             <h2 class="title-welcome fw-bold ">SELAMAT DATANG DI SILADMAS</h2>
             <h5 class="title-desc fw-bold">(SISTEM INFORMASI LAYANAN DAN DATABASE ORMAS)</h5>
         </div>
-        <div class="card-hero pt-5 mt-4">
+        <div class="card-hero pt-4 mt-4 pb-5 mb-5">
             <div class="row justify-content-center">
                 <div class="col-md-3 d-flex justify-content-center">
                     <div class="card text-center">
@@ -71,9 +71,9 @@
                 </div>
             </div>
     </main>
-   <footer class="fixed-bottom container">
-        <div class="col-md-8 mx-auto text-center desc">
-            <p class="fw-bold">copyright © 2023 Kesbangpol</p>
+   <footer class="fixed-bottom  bg-light">
+        <div class="col-md-8 mx-auto text-center desc py-2">
+            <p class="fw-bold">copyright © 2024 Kesbangpol</p>
             <p class="fw-bold">BADAN KESATUAN BANGSA DAN POLITIK <br> PROVINSI SULAWESI TENGAH</p>
         </div>
     </footer>

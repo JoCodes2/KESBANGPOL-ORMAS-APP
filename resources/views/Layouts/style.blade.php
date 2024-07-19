@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{{ asset('dist/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('dist/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 <style>
-    .sidebar {
+    .main-sidebar {
         background-color: #063158 !important;
         /* Ubah warna sesuai keinginan */
     }

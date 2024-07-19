@@ -17,26 +17,27 @@
                 Lapor Keberadaan Ormas</a>
         </div>
 
-
-        <div class="card">
-            <div class="card-header">
-                <h3>Silahkan Input Nama/Singkatan Ormas</h3>
+        <div class="py-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6>Silahkan Input Nama/Singkatan Ormas</h6>
+                </div>
+                <div class="card-body">
+                    <form id="searchForm">
+                        <div class="form-group">
+                            <input type="text" id="search" name="keyword" class="form-control"
+                                placeholder="Search Ormas...">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cari</button>
+                    </form>
+                    <ul id="results" class="list-group mt-2"></ul>
+                    <p id="no-results" class="text-muted mt-2" style="display: none;">Tidak ada data</p>
+                </div>
             </div>
-            <div class="card-body">
-                <form id="searchForm">
-                    <div class="form-group">
-                        <input type="text" id="search" name="keyword" class="form-control"
-                            placeholder="Search Ormas...">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Cari</button>
-                </form>
-                <ul id="results" class="list-group mt-2"></ul>
-                <p id="no-results" class="text-muted mt-2" style="display: none;">Tidak ada data</p>
-            </div>
+            <!-- Container untuk menampilkan detail data -->
+            <div id="ormasDetail" style="display: none;"></div>
+            <button id="clearButton" class="btn btn-secondary mt-3" style="display:none;">Kembali</button>
         </div>
-        <!-- Container untuk menampilkan detail data -->
-        <div id="ormasDetail" style="display: none;"></div>
-        <button id="clearButton" class="btn btn-secondary mt-3" style="display:none;">Kembali</button>
 
     </div>
 @endsection

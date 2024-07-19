@@ -1,7 +1,7 @@
 @extends('Layouts.UserTemplete')
 @section('content')
     <div class="py-4">
-        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
+        <div class=" py-3 d-flex flex-row align-items-center justify-content-center">
             <h3 class="m-0 font-weight-bold "><i class=""></i>PRODUK HUKUM</h3>
         </div>
 
@@ -53,7 +53,7 @@
                             "lengthMenu": [10, 20, 30, 40, 50],
                             "autoWidth": false,
                             "language": {
-                                "lengthMenu": "MENU",
+                                "lengthMenu": "_MENU_",
                                 "zeroRecords": "<i class='fas fa-sad-tear pr-2'></i>Tidak ada data yang ditemukan",
                                 "info": "Menampilkan halaman PAGE dari PAGES",
                                 "infoEmpty": "Tidak ada data tersedia",
