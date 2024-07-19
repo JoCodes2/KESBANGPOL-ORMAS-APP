@@ -290,6 +290,10 @@
 @section('script')
 <script>
     $(document).ready(function(){
+        $('#exportData').click(function() {
+            let page = $('#loadData').DataTable().page.info().page + 1;
+            window.location.href = `v1/ormas/export-data?page=${page}`;
+        });
 
         $('#no_hp_ketua, #no_hp_sekretaris, #no_hp_bendahara').on('input', function() {
             var input = $(this).val();
@@ -449,11 +453,7 @@
             });
         }
 
-        $('#exportData').click(function(){
-            $('#formDataModal').modal('show');
-            $('.text-danger').text('');
-            $('#upsertData')[0].reset();
-        });
+
 
         // detail ormas
         $(document).on('click', '.detail-ormas', function() {

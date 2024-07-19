@@ -7,8 +7,11 @@ use App\Interfaces\OrmasInterfaces;
 use App\Models\DocumentOrmasModel;
 use App\Models\OrmasModel;
 use App\Traits\HttpResponseTraits;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use PDF;
 
 class OrmasRepositories implements OrmasInterfaces
 {
@@ -192,9 +195,39 @@ class OrmasRepositories implements OrmasInterfaces
 
         return $results;
     }
-    
+
     public function findByName($namaOrmas)
     {
         return $this->ormasModel::where('nama_ormas', $namaOrmas)->first();
+    }
+
+
+    public function exportData(Request $request)
+    {
+        $page = $request->query('page', 1);
+        $perPage = 10;
+        $ormas = $this->ormasModel::skip(($page - 1) * $perPage)
+            ->take($perPage)
+            ->get([
+                'nama_ormas',
+                'singkatan_ormas',
+                'bidang_ormas',
+                'legalitas_ormas',
+                'alamat_kesekretariatan',
+                'nama_ketua',
+                'no_hp_ketua',
+                'nama_sekretaris',
+                'no_hp_sekretaris',
+                'nama_bendahara',
+                'no_hp_bendahara',
+                'npwp',
+                'tanggal_berdiri',
+                'masa_berlaku_ormas',
+            ]);
+
+        $pdf = PDF::loadView('admin.export', compact('ormas'))
+            ->setPaper('f4', 'landscape');
+        $fileName = Str::random(10) . '-data-ormas.pdf';
+        return $pdf->download($fileName);
     }
 }
