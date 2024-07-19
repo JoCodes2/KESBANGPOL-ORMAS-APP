@@ -32,6 +32,7 @@
             text-align: center; /* Tengahkan teks di dalam footer */
         }
     </style>
+
 </head>
 <body class="d-flex flex-column">
     @include('Layouts.NavbarUser')
@@ -47,5 +48,21 @@
     </div>
     @include('Layouts.script')
     @yield('scripts')
+    <script>
+        $(document).ready(function(){
+            if (window.location.pathname.includes('/alur-lapor')) {
+                $('.register-ormas').addClass('br-bottom');
+                $('.search-ormas').addClass('br-left br-bottom');
+            }
+            if (window.location.pathname.includes('/register')) {
+                $('.alur-lapor').addClass('br-bottom');
+                $('.search-ormas').addClass('br-bottom');
+            }
+            if (window.location.pathname.includes('/search')) {
+                $('.alur-lapor').addClass('br-bottom');
+                $('.register-ormas').addClass('br-bottom');
+            }
+        });
+    </script>
 </body>
 </html>
