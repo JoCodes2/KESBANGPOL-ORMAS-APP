@@ -35,7 +35,7 @@ Route::get('/alur-lapor', function () {
     return view('user.AlurLapor');
 });
 Route::get('/search', function () {
-    return view('user.AlurLapor');
+    return view('user.searchOrmas');
 });
 Route::get('/register', function () {
     return view('user.registerOrmas');
