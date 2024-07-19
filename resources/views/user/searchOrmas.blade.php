@@ -28,7 +28,7 @@
                         <input type="text" id="search" name="keyword" class="form-control"
                             placeholder="Search Ormas...">
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary">Cari</button>
                 </form>
                 <ul id="results" class="list-group mt-2"></ul>
                 <p id="no-results" class="text-muted mt-2" style="display: none;">Tidak ada data</p>
@@ -36,6 +36,7 @@
         </div>
         <!-- Container untuk menampilkan detail data -->
         <div id="ormasDetail" style="display: none;"></div>
+        <button id="clearButton" class="btn btn-secondary mt-3" style="display:none;">Kembali</button>
 
     </div>
 @endsection
@@ -137,12 +138,18 @@
                             $('#ormasDetail').html(tableHtml)
                                 .show(); // Menampilkan tabel dengan detail data
                             $('#searchForm').hide(); // Menyembunyikan form pencarian
+                            $('#clearButton').show(); // Menampilkan tombol clear
                         } else {
                             $('#ormasDetail').html('<p>Data tidak ditemukan</p>').show();
+                            $('#clearButton')
+                        .show(); // Menampilkan tombol clear meski data tidak ditemukan
+
                         }
                     },
                     error: function() {
                         $('#ormasDetail').html('<p>Gagal memuat data</p>').show();
+                        $('#clearButton').show(); // Menampilkan tombol clear saat terjadi error
+
                     }
                 });
             });
@@ -162,7 +169,17 @@
                     $('#no-results').hide();
                     $('#searchForm').show(); // Menampilkan kembali form pencarian saat input dikosongkan
                     $('#ormasDetail').hide(); // Sembunyikan detail data saat input dikosongkan
+                    $('#clearButton').hide(); // Sembunyikan tombol clear
+
                 }
+            });
+
+            // Event handler for Clear button
+            $('#clearButton').on('click', function() {
+                $('#ormasDetail').empty().hide(); // Menghapus dan menyembunyikan detail data
+                $('#searchForm').show(); // Menampilkan kembali form pencarian
+                $('#clearButton').hide(); // Menyembunyikan tombol clear
+                $('#search').val(''); // Kosongkan input pencarian
             });
         });
     </script>
