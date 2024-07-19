@@ -70,4 +70,8 @@ class OrmasController extends Controller
             'message' => 'Data tidak ditemukan',
         ], 404);
     }
+    public function exportData(Request $request)
+    {
+        return $this->ormasRepo->exportData($request);
+    }
 }

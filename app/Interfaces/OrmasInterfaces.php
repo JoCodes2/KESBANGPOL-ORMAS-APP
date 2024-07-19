@@ -4,6 +4,7 @@ namespace App\Interfaces;
 
 use App\Http\Requests\OrmasRequest;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 
 interface OrmasInterfaces
 {
@@ -14,5 +15,5 @@ interface OrmasInterfaces
     public function deleteData($id);
     // public function searchByNameOrAbbreviation($keyword);
     public function findByName($namaOrmas); // Tambahkan metode ini
-
+    public function exportData(Request $request);
 }
