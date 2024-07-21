@@ -10,9 +10,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" href="{{ asset('custom/asset/Group 168.png') }}" type="image/png" />
-
+    @yield('style') <!-- Pastikan ini ada di sini -->
 
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
