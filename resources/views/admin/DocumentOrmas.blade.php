@@ -22,7 +22,9 @@
                     <th>Pas Foto Pengurus</th>
                     <th>Surat Keterangan Domisili Organisasi</th>
                     <th>Foto Copy Kartu Tanda Penduduk Pengurus Organisasi</th>
+                    @if (auth()->check() && auth()->user()->role =='user')
                     <th>Aksi</th>
+                    @endif
                 </tr>
             </thead>
             <tbody id="tbody" class="text-center">
@@ -57,9 +59,11 @@
                         tableBody += "<td>" + createDownloadLink(item.file_pas_foto, 'pas-foto') + "</td>";
                         tableBody += "<td>" + createDownloadLink(item.file_surat_keterangan_domisili, 'surat-keterangan-domisili') + "</td>";
                         tableBody += "<td>" + createDownloadLink(item.file_ktp_pengurus, 'ktp-pengurus') + "</td>";
+                        @if (auth()->check() && auth()->user()->role =='user')
                         tableBody += "<td>";
                         tableBody += "<button type='button' class='btn btn-outline-danger delete-confirm' data-id='" + item.id + "'><i class='fa fa-trash'></i></button>";
                         tableBody += "</td>";
+                        @endif
                         tableBody += "</tr>";
                     });
 

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Authentification\AuthRequest;
-use App\Http\Requests\AuthRequest as RequestsAuthRequest;
+use App\Http\Requests\AuthRequest;
 use App\Repositories\AuthRepositories;
 use Illuminate\Http\Request;
 
@@ -17,7 +16,7 @@ class AuthController extends Controller
         return $this->authRepo = $authRepo;
     }
 
-    public function login(RequestsAuthRequest $request)
+    public function login(AuthRequest $request)
     {
         return $this->authRepo->login($request);
     }

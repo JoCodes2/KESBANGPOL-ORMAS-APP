@@ -34,17 +34,19 @@
                         <div class="card-body">
                             <form id="LoginForm" class="pt-4" method="POST">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="username" >
                                     <i class="fas fa-user"></i> <!-- User icon -->
+                                    <small class="text-danger" id="username-error"></small>
                                 </div>
                                 <div class="form-group mt-5">
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="password" >
                                     <i class="fas fa-lock"></i> <!-- Password icon -->
+                                    <small class="text-danger" id="password-error"></small>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center text-center mt-5">
+                                    <button type="submit" class="custom-btn" id="btn-login">Log In</button>
                                 </div>
                             </form>
-                            <div class="d-flex justify-content-center align-items-center text-center mt-5">
-                                <button type="button" class="custom-btn" id="btn-login">Log In</button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -52,8 +54,87 @@
         </div>
     </div>
     @include('Layouts.script')
-    <script>
+<script>
 
+        const apiUrl = 'v1/login';
+        function successAlert(message) {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: message,
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1000,
+            });
+        }
+
+        function errorAlert(message) {
+            Swal.fire({
+                title: 'Error',
+                text: message,
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
+
+        function loadingAlert() {
+            Swal.fire({
+                title: 'Loading...',
+                text: 'Please wait',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            let formInput = $('#LoginForm');
+
+            formInput.on('submit', function (e) {
+                e.preventDefault();
+
+                $('.text-danger').text('');
+
+                let formData = new FormData(this);
+                loadingAlert();
+
+                $.ajax({
+                    type: 'POST',
+                    url: `{{ url('${apiUrl}') }}`,
+                    data: formData,
+                    dataType: 'JSON',
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        Swal.close();
+                        if (response.code === 422) {
+                            let errors = response.errors;
+                            $.each(errors, function(key, value) {
+                                $('#' + key + '-error').text(value[0]);
+                            });
+                        } else {
+                            successAlert();
+                            window.location.href = '/cms/dashboard';
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        Swal.close();
+                        const response = xhr.responseJSON;
+                        if (xhr.status === 401) {
+                            errorAlert('Terjadi kesalahan!');
+                        }else {
+                            console.error(xhr.responseText);
+                        }
+                    }
+                });
+            });
+        });
     </script>
 </body>
 

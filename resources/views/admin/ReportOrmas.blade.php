@@ -72,7 +72,9 @@
                         tableBody += "<td><img src='/uploads/file-alur-report/" + item.file_alur_lapor + "' style='max-width: 100px;'></td>";
                         tableBody += "<td>";
                             tableBody += "<a href='/uploads/file-alur-report/" + item.file_alur_lapor + "' download='" + item.file_alur_lapor + "' class='btn btn-outline-primary'><i class='fa-solid fa-eye pr-2'></i>Detail</a>";
+                            @if (auth()->check() && auth()->user()->role =='user')
                             tableBody += "<button type='button' class='btn btn-outline-danger delete-confirm' data-id='" + item.id + "'><i class='fa fa-trash'></i></button>";
+                            @endif
                         tableBody += "</td>";
                         tableBody += "</tr>";
                     });
