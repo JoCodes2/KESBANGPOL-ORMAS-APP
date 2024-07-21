@@ -52,7 +52,9 @@
             <div class="d-flex align-items-center row">
                 <div class="col-sm-7">
                     <div class="card-body ">
-                        <h1 class=" text-primary fw-bold">Selamat Datang! 🎉</h1>
+                        <h1 class=" text-primary fw-bold">Selamat Datang! 🎉 <span> @auth
+                                {{ auth()->user()->name }}
+                            @endauth</span></h1>
                         <br>
                         <h4 class="mb-5">SILADMAS, Sistem Informasi Layanan Dan Database Ormas.</h4>
                     </div>
@@ -103,7 +105,7 @@
     <script>
         $(document).ready(function() {
             $.ajax({
-                url: 'v1/dashboard', // Ganti dengan endpoint yang benar
+                url: '/v1/dashboard', // Ganti dengan endpoint yang benar
                 method: 'GET',
                 success: function(response) {
                     console.log(response);

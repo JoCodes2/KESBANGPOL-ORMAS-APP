@@ -356,8 +356,10 @@
 
                         tableBody += "<td>";
                             tableBody += "<button type='button' class='btn btn-outline-success detail-ormas' data-id='" + item.id + "'><i class='fa-solid fa-eye'></i></button>";
+                            @if (auth()->check() && auth()->user()->role =='user')
                             tableBody += "<button type='button' class='btn btn-outline-primary edit-ormas' data-id='" + item.id + "'><i class='fa-solid fa-pen-to-square'></i></button>";
                             tableBody += "<button type='button' class='btn btn-outline-danger delete-confirm' data-id='" + item.id + "'><i class='fa fa-trash'></i></button>";
+                            @endif
                         tableBody += "</td>";
                         tableBody += "</tr>";
                     });

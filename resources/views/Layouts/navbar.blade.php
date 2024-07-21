@@ -12,7 +12,7 @@
         <!-- Navbar Search -->
         <li class="nav-item">
             <a class="nav-link">
-                <i class="fas fa-th-large"></i>
+              <span>@auth{{ auth()->user()->name }}@endauth </span><strong class="px-1">|</strong> <i class="fas fa-sign-out-alt btn-logout"></i>
             </a>
         </li>
     </ul>

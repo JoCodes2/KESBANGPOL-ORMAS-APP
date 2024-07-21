@@ -14,9 +14,6 @@
 <link rel="stylesheet" href="{{ asset('dist/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 <!-- Daterange picker -->
 <link rel="stylesheet" href="{{ asset('dist/plugins/daterangepicker/daterangepicker.css') }}">
-<link rel="stylesheet" href="/path/to/bootstrap.css">
-<link rel="stylesheet" href="/path/to/font-awesome.css">
-<link rel="stylesheet" href="/path/to/your-custom-styles.css">
 
 <!-- summernote -->
 <link rel="stylesheet" href="{{ asset('dist/plugins/summernote/summernote-bs4.min.css') }}">

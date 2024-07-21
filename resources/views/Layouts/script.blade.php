@@ -33,5 +33,39 @@
 {{-- jsPDF --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
-
+    {{-- logout --}}
+    <script>
+        const urlLogout = 'v1/logout'
+        $(document).ready(function() {
+            $('.btn-logout').click(function(e) {
+                Swal.fire({
+                    title: 'Yakin ingin Logout?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes',
+                    cancelButtonText: 'Cancel',
+                    resolveButton: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        e.preventDefault();
+                        $.ajax({
+                            url: `{{ url('${urlLogout}') }}`,
+                            method: 'POST',
+                            dataType: 'json',
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            success: function(response) {
+                                console.log(response);
+                                window.location.href = '/login';
+                            },
+                            error: function(xhr, status, error) {
+                                alert('Error: Failed to logout. Please try again.');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 

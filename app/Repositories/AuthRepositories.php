@@ -2,8 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Http\Requests\Authentification\AuthRequest;
-use App\Http\Requests\AuthRequest as RequestsAuthRequest;
+use App\Http\Requests\AuthRequest;
 use App\Interfaces\AuthInterfaces;
 use App\Models\User;
 use App\Traits\HttpResponseTraits;
@@ -20,7 +19,7 @@ class AuthRepositories implements AuthInterfaces
     {
         return $this->userModel = $userModel;
     }
-    public function login(RequestsAuthRequest $request)
+    public function login(AuthRequest $request)
     {
         if (!Auth::attempt($request->only('username', 'password'))) {
             return response()

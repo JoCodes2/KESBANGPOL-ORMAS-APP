@@ -43,41 +43,13 @@ Route::get('/search', function () {
 Route::get('/register', function () {
     return view('user.registerOrmas');
 });
-Route::get('/login', function () {
-    return view('auth.login');
+// route view and api login
+Route::middleware('guest')->group(function () {
+    Route::get('/login', function () {
+        return view('auth.login');
+    })->name('login');
+    Route::post('/v1/login', [AuthController::class, 'login']);
 });
-
-Route::get('v1/dashboard', [DashboardController::class, 'index']);
-
-Route::get('/dashboard', function () {
-    return view('admin.Dashboard');
-});
-Route::get('/alur-lapor-ormas', function () {
-    return view('admin.ReportOrmas');
-});
-Route::get('/ormas', function () {
-    return view('admin.Ormas');
-});
-Route::get('/document-ormas', function () {
-    return view('admin.DocumentOrmas');
-});
-
-Route::get('/produk-hukum', function () {
-    return view('admin.ProdukHukum');
-});
-Route::get('/user', function () {
-    return view('admin.User');
-});
-Route::get('/search-ormas', function () {
-    return view('admin.search');
-});
-
-Route::get('/register-ormas', function () {
-    return view('admin.RegisterOrmas');
-});
-//* route api *//
-// route  api flow report //
-Route::post('/v1/login', [AuthController::class, 'login']);
 Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(function () {
     Route::get('/', 'getAllData');
     Route::post('/create', 'createData');
@@ -106,17 +78,48 @@ Route::prefix('v1/produk-hukum')->controller(ProdukHukumController::class)->grou
     Route::post('/update/{id}', 'updateDataById');
     Route::delete('/delete/{id}', 'deleteData');
 });
-Route::prefix('v1/document-ormas')->controller(DocumentOrmasController::class)->group(function () {
-    Route::get('/', 'getAllData');
-    Route::delete('/delete/{id}', 'deleteData');
-});
-// route  api user //
-Route::prefix('v1/user')->controller(UserController::class)->group(function () {
-    Route::get('/', 'getAllData');
-    Route::post('/create', 'createData');
-    Route::get('/get/{id}', 'getDataById');
-    Route::post('/update/{id}', 'updateDataById');
-    Route::delete('/delete/{id}', 'deleteData');
-});
 
-// * end route api *//
+// end route api
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::post('/v1/logout', [AuthController::class, 'logout']);
+    Route::get('/v1/dashboard', [DashboardController::class, 'index']);
+
+    Route::get('/cms/dashboard', function () {
+        return view('admin.Dashboard');
+    });
+    Route::get('/cms/alur-lapor-ormas', function () {
+        return view('admin.ReportOrmas');
+    });
+    Route::get('/cms/ormas', function () {
+        return view('admin.Ormas');
+    });
+    Route::get('/cms/document-ormas', function () {
+        return view('admin.DocumentOrmas');
+    });
+
+    Route::get('/cms/produk-hukum', function () {
+        return view('admin.ProdukHukum');
+    });
+    Route::get('/cms/user', function () {
+        return view('admin.User');
+    });
+    Route::get('/cms/search-ormas', function () {
+        return view('admin.search');
+    });
+
+    Route::get('/cms/register-ormas', function () {
+        return view('admin.RegisterOrmas');
+    });
+    Route::prefix('v1/document-ormas')->controller(DocumentOrmasController::class)->group(function () {
+        Route::get('/', 'getAllData');
+        Route::delete('/delete/{id}', 'deleteData');
+    });
+    // route  api user //
+    Route::prefix('v1/user')->controller(UserController::class)->group(function () {
+        Route::get('/', 'getAllData');
+        Route::post('/create', 'createData');
+        Route::get('/get/{id}', 'getDataById');
+        Route::post('/update/{id}', 'updateDataById');
+        Route::delete('/delete/{id}', 'deleteData');
+    });
+});
