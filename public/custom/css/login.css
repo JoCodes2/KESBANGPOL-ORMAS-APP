@@ -1,0 +1,74 @@
+.form-group {
+    position: relative;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #fff; /* Border bawah putih */
+    background: transparent; /* Background transparan */
+    color: #fff; /* Warna teks putih */
+    padding-right: 40px; /* Space for icon */
+}
+
+.form-control::placeholder {
+    color: #fff; /* Warna placeholder putih */
+}
+
+.form-control:focus {
+    border: none;
+    border-bottom: 2px solid #fff; /* Border bawah putih */
+    background: transparent; /* Background transparan */
+    color: #fff; /* Warna teks putih */
+    padding-right: 40px; /* Space for icon */
+}
+
+.form-group i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #fff; /* Warna ikon putih */
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.card-login {
+    border-radius: 50px;
+    background-color: rgba(
+        6,
+        49,
+        88,
+        0.85
+    ); /* Warna latar belakang dengan transparansi */
+}
+
+.card-title-login {
+    color: #fff; /* Warna teks header putih */
+    font-weight: 400px;
+    font-size: 36px;
+}
+
+.custom-btn {
+    width: 150px;
+    height: 45px;
+    border: 1px solid #fff;
+    border-radius: 20px; /* Hanya sudut kiri atas yang melengkung */
+    background-color: #fbfbfb; /* Warna latar belakang tombol (ubah sesuai kebutuhan) */
+    color: #000000; /* Warna teks tombol */
+    display: flex; /* Gunakan Flexbox untuk pusatkan teks jika diperlukan */
+    align-items: center; /* Vertikal pusatkan teks dalam tombol */
+    justify-content: center; /* Horizontal pusatkan teks dalam tombol */
+    font-size: 16px; /* Ukuran teks tombol */
+    cursor: pointer; /* Tampilkan kursor pointer saat hover */
+}
+.custom-btn:hover {
+    background-color: #f8f3f3; /* Warna latar belakang tombol (ubah sesuai kebutuhan) */
+    color: #000000; /* Warna teks tombol */
+    cursor: pointer; /* Tampilkan kursor pointer saat hover */
+    transition: opacity 0.3s; /* Efek transisi pada opacity */
+}
+.card-login {
+    border: 1px solid #fff;
+}

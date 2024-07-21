@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CMS\DocumentOrmasController;
 use App\Http\Controllers\CMS\FlowReportController;
 use App\Http\Controllers\CMS\UserController;
@@ -41,7 +42,9 @@ Route::get('/register', function () {
     return view('user.registerOrmas');
 });
 // end ui
-
+Route::get('/login', function () {
+    return view('auth.login');
+});
 Route::get('/dashboard', function () {
     return view('admin.Dashboard');
 });
@@ -70,6 +73,7 @@ Route::get('/register-ormas', function () {
 });
 //* route api *//
 // route  api flow report //
+Route::post('/v1/login', [AuthController::class, 'login']);
 Route::prefix('v1/flow-report')->controller(FlowReportController::class)->group(function () {
     Route::get('/', 'getAllData');
     Route::post('/create', 'createData');
