@@ -20,7 +20,7 @@
         <div class="py-3">
             <div class="card">
                 <div class="card-header">
-                    <h6>Silahkan Input Nama/Singkatan Ormas</h6>
+                    <h6 id="searchPrompt">Silahkan Input Nama/Singkatan Ormas</h6>
                 </div>
                 <div class="card-body">
                     <form id="searchForm">
@@ -44,6 +44,18 @@
 
 @section('scripts')
     <script>
+        // loading alerts
+        function loadingAlert() {
+            Swal.fire({
+                title: 'Loading...',
+                text: 'Please wait',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        }
+
         $(document).ready(function() {
             // Menggunakan event submit form untuk melakukan pencarian
             $('#searchForm').submit(function(event) {
@@ -51,6 +63,7 @@
 
                 var keyword = $('#search').val();
                 if (keyword.length > 0) {
+                    loadingAlert(); // Menampilkan loading alert
                     $.ajax({
                         url: '/v1/ormas/search-ormas', // Pastikan URL ini benar
                         method: 'GET',
@@ -58,6 +71,7 @@
                             keyword: keyword
                         },
                         success: function(response) {
+                            Swal.close(); // Menutup loading alert
                             console.log(response);
                             $('#results').empty();
                             if (response.data.length > 0) {
@@ -77,6 +91,7 @@
                             }
                         },
                         error: function() {
+                            Swal.close(); // Menutup loading alert
                             $('#results').empty();
                             $('#no-results').show();
                         }
@@ -91,6 +106,7 @@
             // Menampilkan detail data saat item pencarian di klik
             $(document).on('click', '.search-item', function() {
                 var namaOrmas = $(this).data('nama-ormas'); // Ambil nama Ormas dari data attribute
+                loadingAlert(); // Menampilkan loading alert
                 $.ajax({
                     url: '/v1/ormas/get-by-name',
                     method: 'GET',
@@ -98,6 +114,7 @@
                         nama_ormas: namaOrmas
                     },
                     success: function(response) {
+                        Swal.close(); // Menutup loading alert
                         console.log(response);
                         if (response.success) {
                             var ormas = response.data;
@@ -136,21 +153,22 @@
                                 '</table>' +
                                 '</div>' +
                                 '</div>';
+                            $('#results').empty(); // Menghapus hasil pencarian sebelumnya
                             $('#ormasDetail').html(tableHtml)
-                                .show(); // Menampilkan tabel dengan detail data
+                        .show(); // Menampilkan tabel dengan detail data
                             $('#searchForm').hide(); // Menyembunyikan form pencarian
+                            $('#searchPrompt').hide(); // Menyembunyikan prompt pencarian
                             $('#clearButton').show(); // Menampilkan tombol clear
                         } else {
                             $('#ormasDetail').html('<p>Data tidak ditemukan</p>').show();
                             $('#clearButton')
                         .show(); // Menampilkan tombol clear meski data tidak ditemukan
-
                         }
                     },
                     error: function() {
+                        Swal.close(); // Menutup loading alert
                         $('#ormasDetail').html('<p>Gagal memuat data</p>').show();
                         $('#clearButton').show(); // Menampilkan tombol clear saat terjadi error
-
                     }
                 });
             });
@@ -170,8 +188,8 @@
                     $('#no-results').hide();
                     $('#searchForm').show(); // Menampilkan kembali form pencarian saat input dikosongkan
                     $('#ormasDetail').hide(); // Sembunyikan detail data saat input dikosongkan
+                    $('#searchPrompt').show(); // Menampilkan prompt pencarian
                     $('#clearButton').hide(); // Sembunyikan tombol clear
-
                 }
             });
 
@@ -179,6 +197,7 @@
             $('#clearButton').on('click', function() {
                 $('#ormasDetail').empty().hide(); // Menghapus dan menyembunyikan detail data
                 $('#searchForm').show(); // Menampilkan kembali form pencarian
+                $('#searchPrompt').show(); // Menampilkan prompt pencarian
                 $('#clearButton').hide(); // Menyembunyikan tombol clear
                 $('#search').val(''); // Kosongkan input pencarian
             });
