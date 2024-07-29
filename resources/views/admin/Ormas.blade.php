@@ -5,7 +5,7 @@
  <div class="card">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h3 class="m-0 font-weight-bold "><i class="fa-solid fa-book pr-2"></i>Data Ormas</h3>
-        <button type="button" class="btn btn-outline-primary ml-auto" id="exportData">
+        <button type="button" class="btn btn-outline-primary ml-auto" id="exportDataOrmas">
             <i class="fa-solid fa-file-export pr-2"></i>Export Data
         </button>
     </div>
@@ -65,29 +65,65 @@
 
                             <div class="form-group row">
                                 <label for="bidang_ormas" class="col-sm-3 col-form-label">Bidang Ormas</label>
-                                <div class="col-sm-9">
+                               <div class="col-sm-9">
                                     <select name="bidang_ormas" id="bidang_ormas" class="form-control">
                                         <option value="" selected disabled>--Pilih--</option>
-                                        <option value="sosial kemanusiaan">Bidang Sosial Kemanusiaan</option>
-                                        <option value="sosial kemasyarakatan">Bidang Sosial Kemasyarakatan</option>
-                                        <option value="agama">Bidang Agama</option>
-                                        <option value="pendidikan">Bidang Pendidikan</option>
-                                        <option value="ekonomi">Bidang Ekonomi</option>
-                                        <option value="budaya">Bidang Budaya</option>
-                                        <option value="hukum dan politik">Bidang Hukum dan Politik</option>
-                                        <option value="aliran keagamaan">Bidang Aliran Kepercayaan</option>
-                                        <option value="nasional">Bidang Nasionalis, Sosial Kemasyarakatan</option>
-                                        <option value="lingkungan">Bidang Lingkungan</option>
-                                        <option value="perdagangan">Bidang Perdagangan</option>
-                                        <option value="hukum">Bidang Hukum</option>
-                                        <option value="kesehatan">Bidang Kesehatan</option>
-                                        <option value="seni">Bidang Seni</option>
-                                        <option value="demokrasi dan kebangsaan">Bidang Demokrasi dan Kebangsaan</option>
-                                        <option value="olaharaga">Bidang Olahraga</option>
-                                        <option value="sosial keagamaan">Bidang Sosial Keagamaan</option>
+                                        <option value="Lingkungan Hidup">Bidang Lingkungan Hidup</option>
+                                        <option value="Energi atau Sumberdaya Alam">Bidang Energi atau Sumberdaya Alam</option>
+                                        <option value="Pendidikan">Bidang Pendidikan</option>
+                                        <option value="Ekonomi">Bidang Ekonomi</option>
+                                        <option value="Seni">Bidang Seni</option>
+                                        <option value="Sosial">Bidang Sosial</option>
+                                        <option value="Budaya">Bidang Budaya</option>
+                                        <option value="Hukum">Bidang Hukum</option>
+                                        <option value="Hobi, Minat, atau Bakat">Bidang Hobi, Minat, atau Bakat</option>
+                                        <option value="Perlindungan HAM">Bidang Perlindungan HAM</option>
+                                        <option value="Kemanusiaan">Bidang Kemanusiaan</option>
+                                        <option value="Kebudayaan dan/atau Adat Istiadat">Bidang Kebudayaan dan/atau Adat Istiadat</option>
+                                        <option value="Agama">Bidang Agama</option>
+                                        <option value="Kepercayaan Kepada Tuhan Yang Maha Esa">Bidang Kepercayaan Kepada Tuhan Yang Maha Esa</option>
+                                        <option value="Penelitian dan Pengembangan">Bidang Penelitian dan Pengembangan</option>
+                                        <option value="Penguatan Kapasitas">Bidang Penguatan Kapasitas</option>
+                                        <option value="Sumber Daya Manusia">Bidang Sumber Daya Manusia</option>
+                                        <option value="Ketenagakerjaan">Bidang Ketenagakerjaan</option>
+                                        <option value="Pertanian">Bidang Pertanian</option>
+                                        <option value="Peternakan">Bidang Peternakan</option>
+                                        <option value="Kelautan dan Perikanan">Bidang Kelautan dan Perikanan</option>
+                                        <option value="Kehutanan">Bidang Kehutanan</option>
+                                        <option value="Kesehatan">Bidang Kesehatan</option>
+                                        <option value="Kepemudaan dan Olahraga dan/atau Bela Diri">Bidang Kepemudaan dan Olahraga dan/atau Bela Diri</option>
+                                        <option value="Demokrasi dan/atau Politik">Bidang Demokrasi dan/atau Politik</option>
+                                        <option value="Pelayanan Masyarakat">Bidang Pelayanan Masyarakat</option>
+                                        <option value="Pemberdayaan Masyarakat">Bidang Pemberdayaan Masyarakat</option>
+                                        <option value="Industri dan Konstruksi">Bidang Industri dan Konstruksi</option>
+                                        <option value="Pariwisata">Bidang Pariwisata</option>
+                                        <option value="Kebencanaan">Bidang Kebencanaan</option>
+                                        <option value="Jurnalistik">Bidang Jurnalistik</option>
+                                        <option value="Ketertiban atau Keamanan">Bidang Ketertiban atau Keamanan</option>
+                                        <option value="Pertahanan dan Belanegara">Bidang Pertahanan dan Belanegara</option>
+                                        <option value="Pemerintahan">Bidang Pemerintahan</option>
+                                        <option value="Pekerjaan Umum dan Penataan Ruang">Bidang Pekerjaan Umum dan Penataan Ruang</option>
+                                        <option value="Perumahan Rakyat dan Kawasan Pemukiman">Bidang Perumahan Rakyat dan Kawasan Pemukiman</option>
+                                        <option value="Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat">Bidang Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat</option>
+                                        <option value="Pemberdayaan Perempuan dan Perlindungan Anak">Bidang Pemberdayaan Perempuan dan Perlindungan Anak</option>
+                                        <option value="Pangan">Bidang Pangan</option>
+                                        <option value="Pertanahan">Bidang Pertanahan</option>
+                                        <option value="Pemberdayaan Desa">Bidang Pemberdayaan Desa</option>
+                                        <option value="Perhubungan">Bidang Perhubungan</option>
+                                        <option value="Komunikasi dan Informatika">Bidang Komunikasi dan Informatika</option>
+                                        <option value="Penanaman Modal">Bidang Penanaman Modal</option>
+                                        <option value="Perdagangan">Bidang Perdagangan</option>
+                                        <option value="Transmigrasi">Bidang Transmigrasi</option>
+                                        <option value="Statistik">Bidang Statistik</option>
+                                        <option value="Kepustakaan">Bidang Kepustakaan</option>
+                                        <option value="Kearsipan">Bidang Kearsipan</option>
+                                        <option value="Koperasi, Usaha Kecil, dan Menengah">Bidang Koperasi, Usaha Kecil, dan Menengah</option>
+                                        <option value="Kependudukan">Bidang Kependudukan</option>
+                                        <option value="Lainnya">Bidang Lainnya</option>
                                     </select>
                                     <small id="bidang_ormas-error" class="text-danger"></small>
                                 </div>
+
                             </div>
 
                             <div class="form-group row">
@@ -265,6 +301,16 @@
                             <td style="width: 20px">:</td>
                             <td><span id="detailNPWP"></span></td>
                         </tr>
+                         <tr>
+                            <td style="width: 50px"><strong>No.Telepon Ormas</strong></td>
+                            <td style="width: 20px">:</td>
+                            <td><span id="hp_ormas"></span></td>
+                        </tr>
+                         <tr>
+                            <td style="width: 50px"><strong>No.Badan Hukum</strong></td>
+                            <td style="width: 20px">:</td>
+                            <td><span id="no_badan_hukum"></span></td>
+                        </tr>
                         <tr>
                             <td style="width: 50px"><strong>Tanggal Berdiri</strong></td>
                             <td style="width: 20px">:</td>
@@ -290,7 +336,7 @@
 @section('script')
 <script>
     $(document).ready(function(){
-        $('#exportData').click(function() {
+        $('#exportDataOrmas').click(function() {
             let page = $('#loadData').DataTable().page.info().page + 1;
             window.location.href = `v1/ormas/export-data?page=${page}`;
         });
@@ -304,23 +350,58 @@
 
         function mapBidangOrmas(value) {
             const bidangMapping = {
-                'sosial kemanusiaan': 'Bidang Sosial Kemanusiaan',
-                'sosial kemasyarakatan': 'Bidang Sosial Kemasyarakatan',
-                'agama': 'Bidang Agama',
-                'pendidikan': 'Bidang Pendidikan',
-                'ekonomi': 'Bidang Ekonomi',
-                'budaya': 'Bidang Budaya',
-                'hukum dan politik': 'Bidang Hukum dan Politik',
-                'aliran keagamaan': 'Bidang Aliran Kepercayaan',
-                'nasional': 'Bidang Nasionalis, Sosial Kemasyarakatan',
-                'lingkungan': 'Bidang Lingkungan',
-                'perdagangan': 'Bidang Perdagangan',
-                'hukum': 'Bidang Hukum',
-                'kesehatan': 'Bidang Kesehatan',
-                'seni': 'Bidang Seni',
-                'demokrasi dan kebangsaan': 'Bidang Demokrasi dan Kebangsaan',
-                'olahraga': 'Bidang Olahraga',
-                'sosial keagamaan': 'Bidang Sosial Keagamaan'
+                'Lingkungan Hidup': 'Bidang Lingkungan Hidup',
+                'Energi atau Sumberdaya Alam': 'Bidang Energi atau Sumberdaya Alam',
+                'Pendidikan': 'Bidang Pendidikan',
+                'Ekonomi': 'Bidang Ekonomi',
+                'Seni': 'Bidang Seni',
+                'Sosial': 'Bidang Sosial',
+                'Budaya': 'Bidang Budaya',
+                'Hukum': 'Bidang Hukum',
+                'Hobi, Minat, atau Bakat': 'Bidang Hobi, Minat, atau Bakat',
+                'Perlindungan HAM': 'Bidang Perlindungan HAM',
+                'Kemanusiaan': 'Bidang Kemanusiaan',
+                'Kebudayaan dan/atau Adat Istiadat': 'Bidang Kebudayaan dan/atau Adat Istiadat',
+                'Agama': 'Bidang Agama',
+                'Kepercayaan Kepada Tuhan Yang Maha Esa': 'Bidang Kepercayaan Kepada Tuhan Yang Maha Esa',
+                'Penelitian dan Pengembangan': 'Bidang Penelitian dan Pengembangan',
+                'Penguatan Kapasitas': 'Bidang Penguatan Kapasitas',
+                'Sumber Daya Manusia': 'Bidang Sumber Daya Manusia',
+                'Ketenagakerjaan': 'Bidang Ketenagakerjaan',
+                'Pertanian': 'Bidang Pertanian',
+                'Peternakan': 'Bidang Peternakan',
+                'Kelautan dan Perikanan': 'Bidang Kelautan dan Perikanan',
+                'Kehutanan': 'Bidang Kehutanan',
+                'Kesehatan': 'Bidang Kesehatan',
+                'Kepemudaan dan Olahraga dan/atau Bela Diri': 'Bidang Kepemudaan dan Olahraga dan/atau Bela Diri',
+                'Demokrasi dan/atau Politik': 'Bidang Demokrasi dan/atau Politik',
+                'Pelayanan Masyarakat': 'Bidang Pelayanan Masyarakat',
+                'Pemberdayaan Masyarakat': 'Bidang Pemberdayaan Masyarakat',
+                'Industri dan Konstruksi': 'Bidang Industri dan Konstruksi',
+                'Pariwisata': 'Bidang Pariwisata',
+                'Kebencanaan': 'Bidang Kebencanaan',
+                'Jurnalistik': 'Bidang Jurnalistik',
+                'Ketertiban atau Keamanan': 'Bidang Ketertiban atau Keamanan',
+                'Pertahanan dan Belanegara': 'Bidang Pertahanan dan Belanegara',
+                'Pemerintahan': 'Bidang Pemerintahan',
+                'Pekerjaan Umum dan Penataan Ruang': 'Bidang Pekerjaan Umum dan Penataan Ruang',
+                'Perumahan Rakyat dan Kawasan Pemukiman': 'Bidang Perumahan Rakyat dan Kawasan Pemukiman',
+                'Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat': 'Bidang Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat',
+                'Pemberdayaan Perempuan dan Perlindungan Anak': 'Bidang Pemberdayaan Perempuan dan Perlindungan Anak',
+                'Pangan': 'Bidang Pangan',
+                'Pertanahan': 'Bidang Pertanahan',
+                'Pemberdayaan Desa': 'Bidang Pemberdayaan Desa',
+                'Perhubungan': 'Bidang Perhubungan',
+                'Komunikasi dan Informatika': 'Bidang Komunikasi dan Informatika',
+                'Penanaman Modal': 'Bidang Penanaman Modal',
+                'Perdagangan': 'Bidang Perdagangan',
+                'Transmigrasi': 'Bidang Transmigrasi',
+                'Statistik': 'Bidang Statistik',
+                'Kepustakaan': 'Bidang Kepustakaan',
+                'Kearsipan': 'Bidang Kearsipan',
+                'Koperasi, Usaha Kecil, dan Menengah': 'Bidang Koperasi, Usaha Kecil, dan Menengah',
+                'Kependudukan': 'Bidang Kependudukan',
+                'Lainnya': 'Bidang Lainnya'
             };
 
             return bidangMapping[value] || value;
@@ -479,6 +560,8 @@
                     $('#detailNamaBendahara').text(response.data.nama_bendahara);
                     $('#detailTlpnBendahara').text(response.data.no_hp_bendahara);
                     $('#detailNPWP').text(response.data.npwp);
+                    $('#hp_ormas').text(response.data.no_hp_ormas);
+                    $('#no_badan_hukum').text(response.data.no_badan_hukum);
                     $('#detailTglBerdiri').text(response.data.tanggal_berdiri);
                     $('#detailMasaBerlaku').text(response.data.masa_berlaku_ormas);
 

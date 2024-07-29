@@ -42,23 +42,58 @@
                             <div class="col-sm-9">
                                 <select name="bidang_ormas" id="bidang_ormas" class="form-control">
                                     <option value="" selected disabled>--Pilih--</option>
-                                    <option value="sosial kemanusiaan">Bidang Sosial Kemanusiaan</option>
-                                    <option value="sosial kemasyarakatan">Bidang Sosial Kemasyarakatan</option>
-                                    <option value="agama">Bidang Agama</option>
-                                    <option value="pendidikan">Bidang Pendidikan</option>
-                                    <option value="ekonomi">Bidang Ekonomi</option>
-                                    <option value="budaya">Bidang Budaya</option>
-                                    <option value="hukum dan politik">Bidang Hukum dan Politik</option>
-                                    <option value="aliran keagamaan">Bidang Aliran Kepercayaan</option>
-                                    <option value="nasional">Bidang Nasionalis, Sosial Kemasyarakatan</option>
-                                    <option value="lingkungan">Bidang Lingkungan</option>
-                                    <option value="perdagangan">Bidang Perdagangan</option>
-                                    <option value="hukum">Bidang Hukum</option>
-                                    <option value="kesehatan">Bidang Kesehatan</option>
-                                    <option value="seni">Bidang Seni</option>
-                                    <option value="demokrasi dan kebangsaan">Bidang Demokrasi dan Kebangsaan</option>
-                                    <option value="olaharaga">Bidang Olahraga</option>
-                                    <option value="sosial keagamaan">Bidang Sosial Keagamaan</option>
+                                    <option value="Lingkungan Hidup">Bidang Lingkungan Hidup</option>
+                                    <option value="Energi atau Sumberdaya Alam">Bidang Energi atau Sumberdaya Alam</option>
+                                    <option value="Pendidikan">Bidang Pendidikan</option>
+                                    <option value="Ekonomi">Bidang Ekonomi</option>
+                                    <option value="Seni">Bidang Seni</option>
+                                    <option value="Sosial">Bidang Sosial</option>
+                                    <option value="Budaya">Bidang Budaya</option>
+                                    <option value="Hukum">Bidang Hukum</option>
+                                    <option value="Hobi, Minat, atau Bakat">Bidang Hobi, Minat, atau Bakat</option>
+                                    <option value="Perlindungan HAM">Bidang Perlindungan HAM</option>
+                                    <option value="Kemanusiaan">Bidang Kemanusiaan</option>
+                                    <option value="Kebudayaan dan/atau Adat Istiadat">Bidang Kebudayaan dan/atau Adat Istiadat</option>
+                                    <option value="Agama">Bidang Agama</option>
+                                    <option value="Kepercayaan Kepada Tuhan Yang Maha Esa">Bidang Kepercayaan Kepada Tuhan Yang Maha Esa</option>
+                                    <option value="Penelitian dan Pengembangan">Bidang Penelitian dan Pengembangan</option>
+                                    <option value="Penguatan Kapasitas">Bidang Penguatan Kapasitas</option>
+                                    <option value="Sumber Daya Manusia">Bidang Sumber Daya Manusia</option>
+                                    <option value="Ketenagakerjaan">Bidang Ketenagakerjaan</option>
+                                    <option value="Pertanian">Bidang Pertanian</option>
+                                    <option value="Peternakan">Bidang Peternakan</option>
+                                    <option value="Kelautan dan Perikanan">Bidang Kelautan dan Perikanan</option>
+                                    <option value="Kehutanan">Bidang Kehutanan</option>
+                                    <option value="Kesehatan">Bidang Kesehatan</option>
+                                    <option value="Kepemudaan dan Olahraga dan/atau Bela Diri">Bidang Kepemudaan dan Olahraga dan/atau Bela Diri</option>
+                                    <option value="Demokrasi dan/atau Politik">Bidang Demokrasi dan/atau Politik</option>
+                                    <option value="Pelayanan Masyarakat">Bidang Pelayanan Masyarakat</option>
+                                    <option value="Pemberdayaan Masyarakat">Bidang Pemberdayaan Masyarakat</option>
+                                    <option value="Industri dan Konstruksi">Bidang Industri dan Konstruksi</option>
+                                    <option value="Pariwisata">Bidang Pariwisata</option>
+                                    <option value="Kebencanaan">Bidang Kebencanaan</option>
+                                    <option value="Jurnalistik">Bidang Jurnalistik</option>
+                                    <option value="Ketertiban atau Keamanan">Bidang Ketertiban atau Keamanan</option>
+                                    <option value="Pertahanan dan Belanegara">Bidang Pertahanan dan Belanegara</option>
+                                    <option value="Pemerintahan">Bidang Pemerintahan</option>
+                                    <option value="Pekerjaan Umum dan Penataan Ruang">Bidang Pekerjaan Umum dan Penataan Ruang</option>
+                                    <option value="Perumahan Rakyat dan Kawasan Pemukiman">Bidang Perumahan Rakyat dan Kawasan Pemukiman</option>
+                                    <option value="Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat">Bidang Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat</option>
+                                    <option value="Pemberdayaan Perempuan dan Perlindungan Anak">Bidang Pemberdayaan Perempuan dan Perlindungan Anak</option>
+                                    <option value="Pangan">Bidang Pangan</option>
+                                    <option value="Pertanahan">Bidang Pertanahan</option>
+                                    <option value="Pemberdayaan Desa">Bidang Pemberdayaan Desa</option>
+                                    <option value="Perhubungan">Bidang Perhubungan</option>
+                                    <option value="Komunikasi dan Informatika">Bidang Komunikasi dan Informatika</option>
+                                    <option value="Penanaman Modal">Bidang Penanaman Modal</option>
+                                    <option value="Perdagangan">Bidang Perdagangan</option>
+                                    <option value="Transmigrasi">Bidang Transmigrasi</option>
+                                    <option value="Statistik">Bidang Statistik</option>
+                                    <option value="Kepustakaan">Bidang Kepustakaan</option>
+                                    <option value="Kearsipan">Bidang Kearsipan</option>
+                                    <option value="Koperasi, Usaha Kecil, dan Menengah">Bidang Koperasi, Usaha Kecil, dan Menengah</option>
+                                    <option value="Kependudukan">Bidang Kependudukan</option>
+                                    <option value="Lainnya">Bidang Lainnya</option>
                                 </select>
                                 <small id="bidang_ormas-error" class="text-danger"></small>
                             </div>
@@ -153,6 +188,22 @@
                             <div class="col-sm-9">
                                 <input type="date" class="form-control" name="masa_berlaku_ormas" id="masa_berlaku_ormas" >
                                 <small id="masa_berlaku_ormas-error" class="text-danger"></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="no_hp_ormas" class="col-sm-3 col-form-label">No.Telepon Ormas</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="no_hp_ormas" id="no_hp_ormas" >
+                                <small id="no_hp_ormas-error" class="text-danger"></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="no_badan_hukum" class="col-sm-3 col-form-label">No.Badan Hukum</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="no_badan_hukum" id="no_badan_hukum" >
+                                <small id="no_badan_hukum-error" class="text-danger"></small>
                             </div>
                         </div>
                     </div>
@@ -255,7 +306,7 @@
             $('#dataOrmasForm').hide();
         });
 
-        $('#no_hp_ketua, #no_hp_sekretaris, #no_hp_bendahara').on('input', function() {
+        $('#no_hp_ketua, #no_hp_sekretaris, #no_hp_bendahara,#no_hp_ormas').on('input', function() {
             var input = $(this).val();
             if (!/^[0-9]*$/.test(input)) {
                 $(this).val(input.slice(0, -1));

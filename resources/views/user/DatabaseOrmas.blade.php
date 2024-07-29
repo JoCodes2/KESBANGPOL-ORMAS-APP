@@ -32,32 +32,58 @@
     $(document).ready(function(){
         function mapBidangOrmas(value) {
             const bidangMapping = {
-                'sosial kemanusiaan': 'Bidang Sosial Kemanusiaan',
-                'sosial kemasyarakatan': 'Bidang Sosial Kemasyarakatan',
-                'agama': 'Bidang Agama',
-                'pendidikan': 'Bidang Pendidikan',
-                'ekonomi': 'Bidang Ekonomi',
-                'budaya': 'Bidang Budaya',
-                'hukum dan politik': 'Bidang Hukum dan Politik',
-                'aliran keagamaan': 'Bidang Aliran Kepercayaan',
-                'nasional': 'Bidang Nasionalis, Sosial Kemasyarakatan',
-                'lingkungan': 'Bidang Lingkungan',
-                'perdagangan': 'Bidang Perdagangan',
-                'hukum': 'Bidang Hukum',
-                'kesehatan': 'Bidang Kesehatan',
-                'seni': 'Bidang Seni',
-                'demokrasi dan kebangsaan': 'Bidang Demokrasi dan Kebangsaan',
-                'olahraga': 'Bidang Olahraga',
-                'sosial keagamaan': 'Bidang Sosial Keagamaan'
-            };
-
-            return bidangMapping[value] || value;
-        }
-
-        function mapHukumOrmas(value) {
-            const bidangMapping = {
-                'berbadan hukum': 'Berbadan Hukum',
-                'tidak berbadan hukum': 'Tidak berbadan Hukum',
+                'Lingkungan Hidup': 'Bidang Lingkungan Hidup',
+                'Energi atau Sumberdaya Alam': 'Bidang Energi atau Sumberdaya Alam',
+                'Pendidikan': 'Bidang Pendidikan',
+                'Ekonomi': 'Bidang Ekonomi',
+                'Seni': 'Bidang Seni',
+                'Sosial': 'Bidang Sosial',
+                'Budaya': 'Bidang Budaya',
+                'Hukum': 'Bidang Hukum',
+                'Hobi, Minat, atau Bakat': 'Bidang Hobi, Minat, atau Bakat',
+                'Perlindungan HAM': 'Bidang Perlindungan HAM',
+                'Kemanusiaan': 'Bidang Kemanusiaan',
+                'Kebudayaan dan/atau Adat Istiadat': 'Bidang Kebudayaan dan/atau Adat Istiadat',
+                'Agama': 'Bidang Agama',
+                'Kepercayaan Kepada Tuhan Yang Maha Esa': 'Bidang Kepercayaan Kepada Tuhan Yang Maha Esa',
+                'Penelitian dan Pengembangan': 'Bidang Penelitian dan Pengembangan',
+                'Penguatan Kapasitas': 'Bidang Penguatan Kapasitas',
+                'Sumber Daya Manusia': 'Bidang Sumber Daya Manusia',
+                'Ketenagakerjaan': 'Bidang Ketenagakerjaan',
+                'Pertanian': 'Bidang Pertanian',
+                'Peternakan': 'Bidang Peternakan',
+                'Kelautan dan Perikanan': 'Bidang Kelautan dan Perikanan',
+                'Kehutanan': 'Bidang Kehutanan',
+                'Kesehatan': 'Bidang Kesehatan',
+                'Kepemudaan dan Olahraga dan/atau Bela Diri': 'Bidang Kepemudaan dan Olahraga dan/atau Bela Diri',
+                'Demokrasi dan/atau Politik': 'Bidang Demokrasi dan/atau Politik',
+                'Pelayanan Masyarakat': 'Bidang Pelayanan Masyarakat',
+                'Pemberdayaan Masyarakat': 'Bidang Pemberdayaan Masyarakat',
+                'Industri dan Konstruksi': 'Bidang Industri dan Konstruksi',
+                'Pariwisata': 'Bidang Pariwisata',
+                'Kebencanaan': 'Bidang Kebencanaan',
+                'Jurnalistik': 'Bidang Jurnalistik',
+                'Ketertiban atau Keamanan': 'Bidang Ketertiban atau Keamanan',
+                'Pertahanan dan Belanegara': 'Bidang Pertahanan dan Belanegara',
+                'Pemerintahan': 'Bidang Pemerintahan',
+                'Pekerjaan Umum dan Penataan Ruang': 'Bidang Pekerjaan Umum dan Penataan Ruang',
+                'Perumahan Rakyat dan Kawasan Pemukiman': 'Bidang Perumahan Rakyat dan Kawasan Pemukiman',
+                'Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat': 'Bidang Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat',
+                'Pemberdayaan Perempuan dan Perlindungan Anak': 'Bidang Pemberdayaan Perempuan dan Perlindungan Anak',
+                'Pangan': 'Bidang Pangan',
+                'Pertanahan': 'Bidang Pertanahan',
+                'Pemberdayaan Desa': 'Bidang Pemberdayaan Desa',
+                'Perhubungan': 'Bidang Perhubungan',
+                'Komunikasi dan Informatika': 'Bidang Komunikasi dan Informatika',
+                'Penanaman Modal': 'Bidang Penanaman Modal',
+                'Perdagangan': 'Bidang Perdagangan',
+                'Transmigrasi': 'Bidang Transmigrasi',
+                'Statistik': 'Bidang Statistik',
+                'Kepustakaan': 'Bidang Kepustakaan',
+                'Kearsipan': 'Bidang Kearsipan',
+                'Koperasi, Usaha Kecil, dan Menengah': 'Bidang Koperasi, Usaha Kecil, dan Menengah',
+                'Kependudukan': 'Bidang Kependudukan',
+                'Lainnya': 'Bidang Lainnya'
             };
 
             return bidangMapping[value] || value;
@@ -75,7 +101,7 @@
                         tableBody += "<td>" + (index + 1) + "</td>";
                         tableBody += "<td>" + mapBidangOrmas(item.bidang_ormas) + "</td>";
                         tableBody += "<td class='text-center'><strong class='fw-bold fs-10'>" + item.singkatan_ormas + "</strong><br>" + item.nama_ormas + "</td>";
-                        tableBody += "<td>" + mapHukumOrmas(item.legalitas_ormas) + "</td>";
+                        tableBody += "<td>" + item.no_badan_hukum + "</td>";
                         tableBody += "<td>";
                         tableBody += "<ul>";
                         tableBody += "<li>" + item.nama_ketua + " (Ketua)</li>";

@@ -67,7 +67,6 @@ Route::prefix('v1/ormas')->controller(OrmasController::class)->group(function ()
     Route::delete('/delete/{id}', 'deleteData');
     Route::get('/search-ormas', 'search'); // Pastikan menggunakan 'search'
     Route::get('/get-by-name', 'getByName'); // Tambahkan rute ini
-    Route::get('/export-data', 'exportData')->name('export.data');
 });
 
 // route produk hukum //
@@ -110,6 +109,7 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/cms/register-ormas', function () {
         return view('admin.RegisterOrmas');
     });
+    Route::get('cms/v1/ormas/export-data', [OrmasController::class, 'exportData'])->name('export.data');
     Route::prefix('v1/document-ormas')->controller(DocumentOrmasController::class)->group(function () {
         Route::get('/', 'getAllData');
         Route::delete('/delete/{id}', 'deleteData');
