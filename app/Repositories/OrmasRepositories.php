@@ -82,6 +82,8 @@ class OrmasRepositories implements OrmasInterfaces
             $ormas->npwp = $request->input('npwp');
             $ormas->tanggal_berdiri = $request->input('tanggal_berdiri');
             $ormas->masa_berlaku_ormas = $request->input('masa_berlaku_ormas');
+            $ormas->no_hp_ormas = $request->input('no_hp_ormas');
+            $ormas->no_badan_hukum = $request->input('no_badan_hukum');
             $ormas->save();
 
             $documetOrmas = new $this->documentOrmasModel;
@@ -137,6 +139,8 @@ class OrmasRepositories implements OrmasInterfaces
             $ormas->npwp = $request->input('npwp');
             $ormas->tanggal_berdiri = $request->input('tanggal_berdiri');
             $ormas->masa_berlaku_ormas = $request->input('masa_berlaku_ormas');
+            $ormas->no_hp_ormas = $request->input('no_hp_ormas');
+            $ormas->no_badan_hukum = $request->input('no_badan_hukum');
             $ormas->save();
 
             return $this->success($ormas);
@@ -221,6 +225,8 @@ class OrmasRepositories implements OrmasInterfaces
                 'nama_bendahara',
                 'no_hp_bendahara',
                 'npwp',
+                'no_hp_ormas',
+                'no_badan_hukum',
                 'tanggal_berdiri',
                 'masa_berlaku_ormas',
             ]);
