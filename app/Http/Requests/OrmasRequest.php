@@ -32,7 +32,7 @@ class OrmasRequest extends FormRequest
         return [
             'nama_ormas' => 'required|string|max:255',
             'singkatan_ormas' => 'required|string|max:255',
-            'bidang_ormas' => 'required|in:sosial kemanusiaan,sosial kemasyarakatan,agama,pendidikan,ekonomi,budaya,hukum dan politik,aliran keagamaan,nasional,lingkungan,perdagangan,hukum,kesehatan,seni,demokrasi dan kebangsaan,olahraga,sosial keagamaan',
+            'bidang_ormas' => 'required',
             'legalitas_ormas' => 'required|in:berbadan hukum,tidak berbadan hukum',
             'alamat_kesekretariatan' => 'required|string|max:255',
             'nama_ketua' => 'required|string|max:255',
@@ -53,6 +53,8 @@ class OrmasRequest extends FormRequest
             'file_pas_foto' => $fileRules,
             'file_ktp_pengurus' => $fileRules,
             'file_surat_keterangan_domisili' => $fileRules,
+            'no_hp_ormas' => 'required',
+            'no_badan_hukum' => 'required',
         ];
     }
 
@@ -62,7 +64,6 @@ class OrmasRequest extends FormRequest
             'nama_ormas.required' => 'Nama ormas wajib diisi.',
             'singkatan_ormas.required' => 'Singkatan ormas wajib diisi.',
             'bidang_ormas.required' => 'Bidang ormas wajib diisi.',
-            'bidang_ormas.in' => 'Bidang ormas tidak valid.',
             'legalitas_ormas.required' => 'Legalitas ormas wajib diisi.',
             'legalitas_ormas.in' => 'Legalitas ormas tidak valid.',
             'alamat_kesekretariatan.required' => 'Alamat kesekretariatan wajib diisi.',
@@ -81,7 +82,8 @@ class OrmasRequest extends FormRequest
             'tanggal_berdiri.date' => 'Tanggal berdiri harus berupa tanggal yang valid.',
             'masa_berlaku_ormas.required' => 'Masa berlaku ormas wajib diisi.',
             'masa_berlaku_ormas.date' => 'Masa berlaku ormas harus berupa tanggal yang valid.',
-
+            'no_hp_ormas.required' => 'No Hp Ormas wajib diisi.',
+            'no_badan_hukum' => 'No Badan Hukum wajib diisi.',
             'file_surat_permohonan.required' => 'Form wajib diisi.',
             'file_surat_permohonan.mimes' => 'File yang diupload harus berupa file PDF.',
             'file_surat_permohonan.max' => 'Ukuran file maksimal 2MB.',

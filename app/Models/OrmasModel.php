@@ -26,6 +26,8 @@ class OrmasModel extends Model
         'npwp',
         'tanggal_berdiri',
         'masa_berlaku_ormas',
+        'no_hp_ormas',
+        'no_badan_hukum',
         'created_at',
         'updated_at',
     ];
