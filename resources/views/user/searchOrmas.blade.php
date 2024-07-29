@@ -103,6 +103,75 @@
                 }
             });
 
+
+            function mapBidangOrmas(value) {
+                const bidangMapping = {
+                    'Lingkungan Hidup': 'Bidang Lingkungan Hidup',
+                    'Energi atau Sumberdaya Alam': 'Bidang Energi atau Sumberdaya Alam',
+                    'Pendidikan': 'Bidang Pendidikan',
+                    'Ekonomi': 'Bidang Ekonomi',
+                    'Seni': 'Bidang Seni',
+                    'Sosial': 'Bidang Sosial',
+                    'Budaya': 'Bidang Budaya',
+                    'Hukum': 'Bidang Hukum',
+                    'Hobi, Minat, atau Bakat': 'Bidang Hobi, Minat, atau Bakat',
+                    'Perlindungan HAM': 'Bidang Perlindungan HAM',
+                    'Kemanusiaan': 'Bidang Kemanusiaan',
+                    'Kebudayaan dan/atau Adat Istiadat': 'Bidang Kebudayaan dan/atau Adat Istiadat',
+                    'Agama': 'Bidang Agama',
+                    'Kepercayaan Kepada Tuhan Yang Maha Esa': 'Bidang Kepercayaan Kepada Tuhan Yang Maha Esa',
+                    'Penelitian dan Pengembangan': 'Bidang Penelitian dan Pengembangan',
+                    'Penguatan Kapasitas': 'Bidang Penguatan Kapasitas',
+                    'Sumber Daya Manusia': 'Bidang Sumber Daya Manusia',
+                    'Ketenagakerjaan': 'Bidang Ketenagakerjaan',
+                    'Pertanian': 'Bidang Pertanian',
+                    'Peternakan': 'Bidang Peternakan',
+                    'Kelautan dan Perikanan': 'Bidang Kelautan dan Perikanan',
+                    'Kehutanan': 'Bidang Kehutanan',
+                    'Kesehatan': 'Bidang Kesehatan',
+                    'Kepemudaan dan Olahraga dan/atau Bela Diri': 'Bidang Kepemudaan dan Olahraga dan/atau Bela Diri',
+                    'Demokrasi dan/atau Politik': 'Bidang Demokrasi dan/atau Politik',
+                    'Pelayanan Masyarakat': 'Bidang Pelayanan Masyarakat',
+                    'Pemberdayaan Masyarakat': 'Bidang Pemberdayaan Masyarakat',
+                    'Industri dan Konstruksi': 'Bidang Industri dan Konstruksi',
+                    'Pariwisata': 'Bidang Pariwisata',
+                    'Kebencanaan': 'Bidang Kebencanaan',
+                    'Jurnalistik': 'Bidang Jurnalistik',
+                    'Ketertiban atau Keamanan': 'Bidang Ketertiban atau Keamanan',
+                    'Pertahanan dan Belanegara': 'Bidang Pertahanan dan Belanegara',
+                    'Pemerintahan': 'Bidang Pemerintahan',
+                    'Pekerjaan Umum dan Penataan Ruang': 'Bidang Pekerjaan Umum dan Penataan Ruang',
+                    'Perumahan Rakyat dan Kawasan Pemukiman': 'Bidang Perumahan Rakyat dan Kawasan Pemukiman',
+                    'Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat': 'Bidang Ketentetaman, Ketertiban Umum, dan Perlindungan Masyarakat',
+                    'Pemberdayaan Perempuan dan Perlindungan Anak': 'Bidang Pemberdayaan Perempuan dan Perlindungan Anak',
+                    'Pangan': 'Bidang Pangan',
+                    'Pertanahan': 'Bidang Pertanahan',
+                    'Pemberdayaan Desa': 'Bidang Pemberdayaan Desa',
+                    'Perhubungan': 'Bidang Perhubungan',
+                    'Komunikasi dan Informatika': 'Bidang Komunikasi dan Informatika',
+                    'Penanaman Modal': 'Bidang Penanaman Modal',
+                    'Perdagangan': 'Bidang Perdagangan',
+                    'Transmigrasi': 'Bidang Transmigrasi',
+                    'Statistik': 'Bidang Statistik',
+                    'Kepustakaan': 'Bidang Kepustakaan',
+                    'Kearsipan': 'Bidang Kearsipan',
+                    'Koperasi, Usaha Kecil, dan Menengah': 'Bidang Koperasi, Usaha Kecil, dan Menengah',
+                    'Kependudukan': 'Bidang Kependudukan',
+                    'Lainnya': 'Bidang Lainnya'
+                };
+
+                return bidangMapping[value] || value;
+            }
+
+            function mapHukumOrmas(value) {
+                const bidangMapping = {
+                    'berbadan hukum': 'Berbadan Hukum',
+                    'tidak berbadan hukum': 'Tidak berbadan Hukum',
+                };
+
+                return bidangMapping[value] || value;
+            }
+
             // Menampilkan detail data saat item pencarian di klik
             $(document).on('click', '.search-item', function() {
                 var namaOrmas = $(this).data('nama-ormas'); // Ambil nama Ormas dari data attribute
@@ -126,10 +195,10 @@
                                 '<table class="table table-striped">' +
                                 '<tr><td><strong>Singkatan</strong></td><td>' + ormas
                                 .singkatan_ormas + '</td></tr>' +
-                                '<tr><td><strong>Bidang</strong></td><td>' + ormas
-                                .bidang_ormas + '</td></tr>' +
-                                '<tr><td><strong>Legalitas</strong></td><td>' + ormas
-                                .legalitas_ormas + '</td></tr>' +
+                                '<tr><td><strong>Bidang</strong></td><td>' + mapBidangOrmas(
+                                    ormas.bidang_ormas) + '</td></tr>' +
+                                '<tr><td><strong>Legalitas</strong></td><td>' + mapHukumOrmas(
+                                    ormas.legalitas_ormas) + '</td></tr>' +
                                 '<tr><td><strong>Alamat</strong></td><td>' + ormas
                                 .alamat_kesekretariatan + '</td></tr>' +
                                 '<tr><td><strong>Ketua</strong></td><td>' + ormas.nama_ketua +
@@ -146,6 +215,10 @@
                                 .no_hp_bendahara + '</td></tr>' +
                                 '<tr><td><strong>NPWP</strong></td><td>' + ormas.npwp +
                                 '</td></tr>' +
+                                '<tr><td><strong>No. Telepon Ormas</strong></td><td>' + ormas.no_hp_ormas +
+                                '</td></tr>' +
+                                '<tr><td><strong>No. Badan Hukum</strong></td><td>' + ormas.no_badan_hukum +
+                                '</td></tr>' +
                                 '<tr><td><strong>Tanggal Berdiri</strong></td><td>' + ormas
                                 .tanggal_berdiri + '</td></tr>' +
                                 '<tr><td><strong>Masa Berlaku</strong></td><td>' + ormas
@@ -155,14 +228,14 @@
                                 '</div>';
                             $('#results').empty(); // Menghapus hasil pencarian sebelumnya
                             $('#ormasDetail').html(tableHtml)
-                        .show(); // Menampilkan tabel dengan detail data
+                                .show(); // Menampilkan tabel dengan detail data
                             $('#searchForm').hide(); // Menyembunyikan form pencarian
                             $('#searchPrompt').hide(); // Menyembunyikan prompt pencarian
                             $('#clearButton').show(); // Menampilkan tombol clear
                         } else {
                             $('#ormasDetail').html('<p>Data tidak ditemukan</p>').show();
                             $('#clearButton')
-                        .show(); // Menampilkan tombol clear meski data tidak ditemukan
+                                .show(); // Menampilkan tombol clear meski data tidak ditemukan
                         }
                     },
                     error: function() {
